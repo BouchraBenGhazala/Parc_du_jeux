@@ -1,6 +1,8 @@
+
 <?php
 
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -14,6 +16,40 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-lg">
+
+            <a class="navbar-brand" href="#">
+              <img src="Images/logo.jpg" width="100" height="100" alt="logo du parc">
+            </a>
+            <ul class="navbar-nav ">
+                <li class="nav-item">
+                    <a class="nav-link " href="#"><span >Acceuil</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Infos pratiques</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="billets.html">Billeterie</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+                
+            
+
+              <!--Right side-->
+
+            <ul class="navbar-nav m-sm-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="#"><i class="bi bi-person"></i>S'authentifier</a>
+                </li>
+            </ul>
+          </nav>
+          
+          <div>
+
+          </div>
+
             <a class="navbar-brand" href="acceuil.php">
               <img src="Images/logo.jpg" width="100" height="100" alt="logo du parc">
             </a>
@@ -40,6 +76,7 @@
                   <a class="nav-link" href="#"><i class="bi bi-person"></i>S'authentifier</a>
                 </li>
           </nav>
+
           <style>
             .nav-link{
                 color: purple;
@@ -47,6 +84,12 @@
                 margin-right: 40px;
                 font-weight: 500;
             }
+
+            
+          </style>
+
+
+
           </style>
 
 
