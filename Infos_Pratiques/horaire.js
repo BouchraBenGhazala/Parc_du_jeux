@@ -1,4 +1,3 @@
-
 window.onload = function() {
     var calendar = document.getElementById('calendar');
     var currentDate = new Date();
@@ -63,36 +62,7 @@ window.onload = function() {
         var selectedDate = new Date(year, month, day);
         var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
         var formattedDate = selectedDate.toLocaleDateString('fr-FR', options);
-    
-        var jour_char = formattedDate.split(' ')[0];
-        var jour_int = day;
-        var mois = formattedDate.split(' ')[2];
-        var annee = formattedDate.split(' ')[4];
-    
-        // Création de l'URL avec les paramètres
-        var url = 'horaire.php' + '?jour_char=' + encodeURIComponent(jour_char) +
-                  '&jour_int=' + encodeURIComponent(jour_int) +
-                  '&mois=' + encodeURIComponent(mois) +
-                  '&annee=' + encodeURIComponent(annee);
-    
-        // Création de l'objet XMLHttpRequest
-        var xhr = new XMLHttpRequest();
-    
-        // Spécification de la méthode et de l'URL de la requête
-        xhr.open('GET', url, true);
-    
-        // Gestionnaire d'événement pour la réponse de la requête
-        xhr.onload = function() {
-            // Votre code pour traiter la réponse du fichier PHP
-            console.log(xhr.responseText);
-        };
-    
-        // Envoi de la requête
-        xhr.send();
-    }
-    
-    
-    
-    
-};
 
+        alert(formattedDate);
+    }
+};

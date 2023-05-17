@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,18 +41,21 @@ th, td {
 }
 
 th {
-    background-color: #ccc;
+  color:purple;
+  background-color: #ccc;
 }
 
 
 </style>
+<?php include 'C:\xampp\htdocs\Parc_du_jeux\navbar.php';?>
+
 </head>
 <body>
-<div id="calendar"></div>
+<!--<div id="calendar"></div>
 
-<script src="horaire.js"></script>
+<script src="horaire.js"></script>-->
+
 <div class="schedule">
-  <h2>Horaire</h2>
   <table id="schedule-table" class="table table-bordered">
     <tr>
       <th>Jour</th>
@@ -77,20 +79,6 @@ if ($conn->connect_error) {
 // Requête SQL pour récupérer les horaires
 $sql = "SELECT jour, heures_ouverture, heures_fermeture FROM horaire";
 $result = $conn->query($sql);
-
-$jour_char = $_GET['jour_char'];
-$jour_int = $_GET['jour_int'];
-$mois = $_GET['mois'];
-$annee = $_GET['annee'];
-
-// Utilisez les variables comme vous le souhaitez dans votre code PHP
-
-// Exemple : Affichage des valeurs
-echo "Jour (abrégé) : " . $jour_char . "<br>";
-echo "Jour (numérique) : " . $jour_int . "<br>";
-echo "Mois : " . $mois . "<br>";
-echo "Année : " . $annee . "<br>";
-
 // Vérifier si des résultats ont été trouvés
 if ($result->num_rows > 0) {
     // Afficher les horaires dans la table
@@ -106,6 +94,22 @@ $conn->close();
 ?>
   </table>
 </div>
+<!--
+  dans php:
+  $jour_char = $_POST['jour_char'];
+$jour_int = $_POST['jour_int'];
+$mois = $_POST['mois'];
+$annee = $_POST['annee'];
+
+// Utilisez les variables comme vous le souhaitez dans votre code PHP
+
+// Exemple : Affichage des valeurs
+echo "Jour (abrégé) : " . $jour_char . "<br>";
+echo "Jour (numérique) : " . $jour_int . "<br>";
+echo "Mois : " . $mois . "<br>";
+echo "Année : " . $annee . "<br>";
+   
+-->
 
     
 </body>
