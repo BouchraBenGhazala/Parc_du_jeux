@@ -10,33 +10,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg">
-            <a class="navbar-brand" href="#">
-              <img src="Images/logo.jpg" width="100" height="100" alt="logo du parc">
-            </a>
-              <ul class="navbar-nav ">
-                <li class="nav-item">
-                  <a class="nav-link " href="acceuil.html"><span >Acceuil</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Infos pratiques</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="billets.html">Billeterie</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Contact</a>
-                </li>
-              </ul>
-
-              <!--Right side-->
-
-              <ul class="navbar-nav m-sm-auto">
-                <li class="nav-item">
-                  <a class="nav-link" href="#"><i class="bi bi-person"></i>S'authentifier</a>
-                </li>
-          </nav>
-
+    <?php include 'navbar.php';?>
 
           <!--Billeterie-->
           <div class="container">
