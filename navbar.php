@@ -1,3 +1,8 @@
+
+<?php
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -11,6 +16,7 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-lg">
+
             <a class="navbar-brand" href="#">
               <img src="Images/logo.jpg" width="100" height="100" alt="logo du parc">
             </a>
@@ -43,6 +49,44 @@
           <div>
 
           </div>
+
+            <a class="navbar-brand" href="acceuil.php">
+              <img src="Images/logo.jpg" width="100" height="100" alt="logo du parc">
+            </a>
+              <ul class="navbar-nav ">
+                <li class="nav-item">
+                  <a class="nav-link " href="acceuil.php"><span >Le parc</span></a>
+                </li>
+
+                <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown link
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+        
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Infos pratiques</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="billets.php">Billeterie</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.php">Contact</a>
+                </li>
+              </ul>
+
+              <!--Right side-->
+
+              <ul class="navbar-nav m-sm-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="#"><i class="bi bi-person"></i>S'authentifier</a>
+                </li>
+          </nav>
+
           <style>
             .nav-link{
                 color: purple;
@@ -50,10 +94,16 @@
                 margin-right: 40px;
                 font-weight: 500;
             }
+
             
           </style>
 
 
+
+          </style>
+
+
+            </div>
         </nav>
     </body>
 </html>
