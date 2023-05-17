@@ -13,7 +13,7 @@
   </head>
   <body>
     <header>
-      <?php include 'navbar.php'; ?>
+       <?php include 'navbar.php'; ?>  
     </header>
     <!-- Carousel -->
     <div id="demo" class="carousel slide " data-bs-ride="carousel">
