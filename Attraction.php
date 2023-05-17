@@ -13,7 +13,7 @@
   </head>
   <body>
     <header>
-       <?php include 'navbar.php'; ?>  
+      <?php include 'navbar.php'; ?>  
     </header>
     <!-- Carousel -->
     <div id="demo" class="carousel slide " data-bs-ride="carousel">
@@ -30,19 +30,19 @@
 
 
         <div class="carousel-item active" >
-          <a href="#">
+          <a href="#Forte">
             <img src="Images/carousel1.jpg"  class="d-block w-100">
           </a>
         </div>
 
         <div class="carousel-item">
-          <a href="#">
+          <a href="#Famille">
             <img src="Images/famille.png"  class="d-block w-100">
           </a>
         </div>
 
         <div class="carousel-item">
-          <a href="#">
+          <a href="#Petit">
             <img src="Images/enfant.png"  class="d-block w-100">
           </a>
         </div>
@@ -57,7 +57,176 @@
       </button>
 
     </div>
-     <!--
+    
+    <!-- Attraction -->
+    <div class="container justify-content-center">
+      <h1 id="Forte">SENSATION FORTE</h1>
+      <div class="row" style="margin-left: 3%">
+        <div class="card shadow-lg m-4 col-md-4" style="width: 300px; height: 310px; border-radius: 20px">
+          <img src="Images/grand8.jpG" alt="" class="card-img-top mt-3" id="Image-card">
+          <div class="card-body pl-3">
+            <h4 class="card-title text-success">Les Montagnes Russes</h4>
+            <i class="bi bi-people-fill">170cm</i>
+            <i class="bi bi-1-circle"></i>
+          </div>
+        </div>
+        <div class="card shadow-lg m-4 col-md-4" style="width: 300px; height: 300px; border-radius: 20px">
+          <img src="Images/bateau-pirate.jpg" alt="" class="card-img-top mt-3" id="Image-card">
+          <div class="card-body pl-3">
+            <h4 class="card-title text-success">Le Bateau Pirate</h4>
+            <i class="bi bi-people-fill">170cm</i>
+            <i class="bi bi-1-circle"></i>
+          </div>
+        </div>
+        <div class="card shadow-lg m-4 col-md-4" style="width: 300px; height: 300px; border-radius: 20px">
+          <img src="Images/RoueFerris.png" alt="" class="card-img-top mt-3" id="Image-card">
+          <div class="card-body pl-3">
+            <h4 class="card-title text-success">Roue Ferris</h4>
+            <i class="bi bi-people-fill">170cm</i>
+            <i class="bi bi-1-circle"></i>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-left: 3%">
+        <div class="card shadow-lg m-4 col-md-4" style="width: 300px; height: 300px; border-radius: 20px">
+          <img src="Images/donjon-extreme.jpg" alt="" class="card-img-top mt-3" id="Image-card">
+          <div class="card-body pl-3">
+            <h4 class="card-title text-success">Le Dojon de l'Extreme</h4>
+            <i class="bi bi-people-fill">170cm</i>
+            <i class="bi bi-1-circle"></i>
+          </div>
+        </div>
+        <div class="card shadow-lg m-4 col-md-4" style="width: 300px; height: 300px; border-radius: 20px">
+          <img src="Images/manege-tournant.jpeg" alt="" class="card-img-top mt-3" id="Image-card">
+          <div class="card-body pl-3">
+            <h4 class="card-title text-success">Le grand huit</h4>
+            <i class="bi bi-person-fill">170cm</i>
+            <i class="bi bi-1-circle"></i>
+          </div>
+        </div>
+        <div class="card shadow-lg m-4 col-md-4" style="width: 300px; height: 300px; border-radius: 20px">
+          <img src="Images/crampus.png" alt="" class="card-img-top mt-3" id="Image-card">
+          <div class="card-body pl-3">
+            <h4 class="card-title text-success">Krampus Expedition</h4>
+            <i class="bi bi-people-fill">170cm</i>
+            <i class="bi bi-1-circle"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- *********************************************************************  -->
+    <div class="container justify-content-center">
+      <h1 id="Famille">Jeux en familles</h1>
+      <div class="row" style="margin-left: 3%">
+        <div class="card shadow-lg m-4 col-md-4" style="width: 300px; height: 300px; border-radius: 20px">
+          <img src="Images/serpent.jpg" alt="" class="card-img-top mt-3" id="Image-card">
+          <div class="card-body pl-3">
+            <h4 class="card-title text-success">Le Serpent</h4>
+            <i class="bi bi-person-fill">170cm</i>
+            <i class="bi bi-1-circle"></i>
+          </div>
+        </div>
+        <div class="card shadow-lg m-4 col-md-4" style="width: 300px; height: 300px; border-radius: 20px">
+          <img src="Images/riviere.png" alt="" class="card-img-top mt-3" id="Image-card">
+          <div class="card-body pl-3">
+            <h4 class="card-title text-success">Riviére</h4>
+            <i class="bi bi-people-fill">170cm</i>
+            <i class="bi bi-1-circle"></i>
+          </div>
+        </div>
+        <div class="card shadow-lg m-4 col-md-4" style="width: 300px; height: 300px; border-radius: 20px">
+          <img src="Images/shlitt.png" alt="" class="card-img-top mt-3" id="Image-card">
+          <div class="card-body pl-3">
+            <h4 class="card-title text-success">La Descente En Schlitt</h4>
+            <i class="bi bi-people-fill">170cm</i>
+            <i class="bi bi-1-circle"></i>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-left: 3%">
+        <div class="card shadow-lg m-4 col-md-4" style="width: 300px; height: 300px; border-radius: 20px">
+          <img src="Images/hante.png" alt="" class="card-img-top mt-3" id="Image-card">
+          <div class="card-body pl-3">
+            <h4 class="card-title text-success">La Maison Hante</h4>
+            <i class="bi bi-people-fill">170cm</i>
+            <i class="bi bi-1-circle"></i>
+          </div>
+        </div>
+        <div class="card shadow-lg m-4 col-md-4" style="width: 300px; height: 300px; border-radius: 20px">
+          <img src="Images/train.jpg" alt="" class="card-img-top mt-3" id="Image-card">
+          <div class="card-body pl-3">
+            <h4 class="card-title text-success">Le train</h4>
+            <i class="bi bi-people-fill">170cm</i>
+            <i class="bi bi-1-circle"></i>
+          </div>
+        </div>
+        <div class="card shadow-lg m-4 col-md-4" style="width: 300px; height: 300px; border-radius: 20px">
+          <img src="Images/aqua.jpeg" alt="" class="card-img-top mt-3" id="Image-card">
+          <div class="card-body pl-3">
+            <h4 class="card-title text-success">Voiture Aqua</h4>
+            <i class="bi bi-people-fill">170cm</i>
+            <i class="bi bi-1-circle"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ****************************************************** -->
+    <div class="container justify-content-center">
+      <h1 id="Petit">Pour les petits</h1>
+      <div class="row" style="margin-left: 3%">
+        <div class="card shadow-lg m-4 col-md-4" style="width: 300px; height: 300px; border-radius: 20px">
+          <img src="Images/petit_serpent.png" alt="" class="card-img-top mt-3" id="Image-card">
+          <div class="card-body pl-3">
+            <h4 class="card-title text-success">Le Petit Serpent</h4>
+            <i class="bi bi-people-fill">170cm</i>
+            <i class="bi bi-1-circle"></i>
+          </div>
+        </div>
+        <div class="card shadow-lg m-4 col-md-4" style="width: 300px; height: 300px; border-radius: 20px">
+          <img src="Images/amusement_park.jpg" alt="" class="card-img-top mt-3" id="Image-card">
+          <div class="card-body pl-3">
+            <h4 class="card-title text-success">Ascenco</h4>
+            <i class="bi bi-people-fill">170cm</i>
+            <i class="bi bi-1-circle"></i>
+          </div>
+        </div>
+        <div class="card shadow-lg m-4 col-md-4" style="width: 300px; height: 300px; border-radius: 20px">
+          <img src="Images/Caroussel.jpeg" alt="" class="card-img-top mt-3" id="Image-card">
+          <div class="card-body pl-3">
+            <h4 class="card-title text-success">Carousel</h4>
+            <i class="bi bi-people-fill">170cm</i>
+            <i class="bi bi-1-circle"></i>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-left: 3%">
+        <div class="card shadow-lg m-4 col-md-4" style="width: 300px; height: 300px; border-radius: 20px">
+          <img src="Images/presentation_1.jpg" alt="" class="card-img-top mt-3" id="Image-card">
+          <div class="card-body pl-3">
+            <h4 class="card-title text-success">Le train tch-tch</h4>
+            <i class="bi bi-people-fill">170cm</i>
+            <i class="bi bi-1-circle"></i>
+          </div>
+        </div>
+        <div class="card shadow-lg m-4 col-md-4" style="width: 300px; height: 300px; border-radius: 20px">
+          <img src="Images/tourne.jpg" alt="" class="card-img-top mt-3" id="Image-card">
+          <div class="card-body pl-3">
+            <h4 class="card-title text-success">Chaise Volante</h4>
+            <i class="bi bi-person-fill">170cm</i>
+            <i class="bi bi-1-circle"></i>
+          </div>
+        </div>
+        <div class="card shadow-lg m-4 col-md-4" style="width: 300px; height: 300px; border-radius: 20px">
+          <img src="Images/as.jpg" alt="" class="card-img-top mt-3" id="Image-card">
+          <div class="card-body pl-3">
+            <h4 class="card-title text-success">L'Escadrille</h4>
+            <i class="bi bi-people-fill">170cm</i>
+            <i class="bi bi-1-circle"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- lien pour billetttttttttttttttttttsssssssssss*************-->
     <div class="row" id="txt" >
       <div class="col-md-10">
         <h1 class="Attract">LES ATTRACTIONS DU PARC</h1>
@@ -71,42 +240,9 @@
         <a href="#" class="btn btn-outline-success btn-lg" type="button">Découvrir</a>
       </div>
     </div>
--->
-    <!-- Attraction -->
-    <div class="container">
-      <h1>SENSATION FORTE</h1>
-      <div class="row">
-        <div class="card shadow-lg m-3 col" style="width: 300px; height: 300px; border: border: 5px solid black;
-        border-radius: 20px;">
-          <img src="Images/grand8.jpg" alt="" class="card-img-top" width="100%">
-          <div class="car-body pl-3">
-            <h4 class="card-title text-success">Le grand huit</h4>
-            <i class="bi bi-person">170cm</i>
-            <i class="bi bi-1-circle"></i>
-          </div>
-        </div>
 
-        <div class="card shadow-lg m-3 col" style="width: 300px; height: 300px; border: border: 5px solid black;
-        border-radius: 20px;">
-          <img src="Images/grand8.jpg" alt="" class="card-img-top">
-          <div class="car-body pl-3">
-            <h4 class="card-title text-success">Le grand huit</h4>
-            <i class="bi bi-person">170cm</i>
-            <i class="bi bi-1-circle"></i>
-          </div>
-        </div>
-        <div class="card shadow-lg m-3 col" style="width: 300px; height: 300px; border: border: 5px solid black;
-        border-radius: 20px;">
-          <img src="Images/grand8.jpg" alt="" class="card-img-top">
-          <div class="car-body pl-3">
-            <h4 class="card-title text-success">Le grand huit</h4>
-            <i class="bi bi-person">170cm</i>
-            <i class="bi bi-1-circle"></i>
-          </div>
-        </div>
-        
-</div>
-    </div>
+
+
     <style>
       #demo{
          margin: 2%; 
@@ -129,6 +265,15 @@
       }
       #txt div a{
         width: 170px;
+      }
+      #Image-card{
+        border-radius: 20px;
+        height: 195px;
+      }
+      h1 div div{
+        width: 300px; 
+        height: 310px; 
+        border-radius: 20px;
       }
     </style>
   </body>

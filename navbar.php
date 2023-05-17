@@ -16,42 +16,38 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg">
-
-              <a class="navbar-brand" href="#">
-                <img src="Images/logo.jpg" width="100" height="100" alt="logo du parc">
-              </a>
-              <ul class="navbar-nav ">
-
-                  <li class="nav-item">
-                      <a class="nav-link " href="acceuil.php"><span >Acceuil</span></a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#">Infos pratiques</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="billets.php">Billeterie</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="contact.php">Contact</a>
-                  </li>
-
-                
-              </ul>
-                  
+      <a class="navbar-brand" href="#">
+        <img src="Images/logo.jpg" width="100" height="100" alt="logo du parc">
+      </a>
+      <ul class="navbar-nav ">
+        <li class="nav-item">
+            <a class="nav-link " href="acceuil.php"><span >Acceuil</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Infos pratiques</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="billets.php">Billeterie</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="contact.php">Contact</a>
+        </li>
+      </ul>
+          
 
 
-                <!--Right side-->
+        <!--Right side-->
 
-              <ul class="navbar-nav m-sm-auto">
-                  <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="bi bi-person"></i>S'authentifier</a>
-                  </li>
-              </ul>
+      <ul class="navbar-nav m-sm-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="bi bi-person"></i>S'authentifier</a>
+          </li>
+      </ul>
     </nav>
 
-<div>
+    <div>
 
-</div>
+    </div>
 
     <style>
       .nav-link{
