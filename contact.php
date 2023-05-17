@@ -5,6 +5,11 @@
 // $password = "";
 // $dbname = "parc_du_jeux";
 
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "parc2";
+
 // // Créer une connexion
 // $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -18,8 +23,13 @@
 // $sujet = $_POST['sujet'] ?? "";
 // $msg = $_POST['message'] ?? "";
 
+
 // $sql = $conn->prepare("INSERT INTO contact (nom_contact, email_contact, sujet, msg) VALUES (?, ?, ?, ?)");
 // $sql->bind_param("ssss", $nom, $email, $sujet, $msg);
+
+$sql = $conn->prepare("INSERT INTO contact2 (nom_contact, email_contact, sujet, msg) VALUES (?, ?, ?, ?)");
+$sql->bind_param("ssss", $nom, $email, $sujet, $msg);
+
 
 // if ($sql->execute()) {
 //   $successMessage="Votre message a été envoyé avec succès.";
