@@ -14,5 +14,6 @@
     </head>
     <body>
    <?php include 'navbar.php';?>
+   <p>Bonjour</p>
     </body>
 </html>

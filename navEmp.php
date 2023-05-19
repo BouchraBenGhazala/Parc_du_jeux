@@ -28,16 +28,13 @@
               <ul class="navbar-nav ">
 
                   <li class="nav-item">
-                      <a class="nav-link " href="acceuil.php"><span >Acceuil</span></a>
+                      <a class="nav-link " href="#"><span >Attraction</span></a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" href="#">Infos pratiques</a>
+                      <a class="nav-link" href="#">Tarifs</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" href="billets.php">Billeterie</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="contact.php">Contact</a>
+                      <a class="nav-link" href="#">Horaire</a>
                   </li>
 
                 
@@ -48,15 +45,12 @@
                 <!--Right side-->
 
               <ul class="navbar-nav m-sm-auto">
-                  <li class="nav-item">
-                    <a class="nav-link" href="authentif.php"><i class="bi bi-person"></i>S'authentifier</a>
-                  </li>
                   <?php
-                      if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 'visiteur') { 
+                      if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 'employe') { 
                         ?>
                         <li class="nav-item">
                         <form action="logout.php" method="POST">
-                          <button type="submit" class="nav-link" id="dcn">Déconnexion</button>
+                          <button type="submit" class="nav-link">Déconnexion</button>
                       </form>
                       </li>
                     <?php }
@@ -76,9 +70,6 @@
         font-size: large;
         margin-right: 40px;
         font-weight: 500;
-      }
-      #dcn{
-        border-color: white;
       }
     </style>
 
