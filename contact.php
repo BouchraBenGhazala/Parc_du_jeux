@@ -1,44 +1,34 @@
 <?php
 
-// $servername = "localhost";
-// $username = "root";
-// $password = "";
-// $dbname = "parc_du_jeux";
-
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "parc2";
 
-// // Créer une connexion
-// $conn = new mysqli($servername, $username, $password, $dbname);
+// Créer une connexion
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-// // Vérifier la connexion
-// if ($conn->connect_error) {
-//   die("Connexion échouée : " . $conn->connect_error);
-// }
+// Vérifier la connexion
+if ($conn->connect_error) {
+  die("Connexion échouée : " . $conn->connect_error);
+}
 
-// $email = $_POST['email'] ?? "";
-// $nom = $_POST['nom'] ?? "";
-// $sujet = $_POST['sujet'] ?? "";
-// $msg = $_POST['message'] ?? "";
-
-
-// $sql = $conn->prepare("INSERT INTO contact (nom_contact, email_contact, sujet, msg) VALUES (?, ?, ?, ?)");
-// $sql->bind_param("ssss", $nom, $email, $sujet, $msg);
+$email = $_POST['email'] ?? "";
+$nom = $_POST['nom'] ?? "";
+$sujet = $_POST['sujet'] ?? "";
+$msg = $_POST['message'] ?? "";
 
 $sql = $conn->prepare("INSERT INTO contact2 (nom_contact, email_contact, sujet, msg) VALUES (?, ?, ?, ?)");
 $sql->bind_param("ssss", $nom, $email, $sujet, $msg);
 
+if ($sql->execute()) {
+  $successMessage="Votre message a été envoyé avec succès.";
+} else {
+  $errorMessage="Une erreur s'est produite lors de l'envoi de votre message. Veuillez réessayer.";
+}
 
-// if ($sql->execute()) {
-//   $successMessage="Votre message a été envoyé avec succès.";
-// } else {
-//   $errorMessage="Une erreur s'est produite lors de l'envoi de votre message. Veuillez réessayer.";
-// }
-
-// $sql->close();
-// $conn->close();
+$sql->close();
+$conn->close();
 
 ?>
 
@@ -65,6 +55,10 @@ $sql->bind_param("ssss", $nom, $email, $sujet, $msg);
     form {
       margin-top: 20px;
     }
+    button{
+      background
+    }
+   
   </style>
 </head>
 <body>
@@ -111,7 +105,7 @@ $sql->bind_param("ssss", $nom, $email, $sujet, $msg);
         <label for="message">Message :</label>
         <textarea id="message" name="msg" rows="5" required></textarea><br>
 
-        <button type="submit">Envoyer</button>
+        <button type="submit" class="btn btn-primary">Envoyer</button>
 <!-- Affichage des messages -->
 <?php if (!empty($successMessage)) : ?>
   <div class="alert alert-success mt-4"><?php echo $successMessage; ?></div>
