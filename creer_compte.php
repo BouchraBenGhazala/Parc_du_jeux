@@ -13,7 +13,7 @@
 <?php
 
     $host='localhost';
-    $dbname='parc_du_jeux';
+    $dbname='parc2';
     $username='root';
     $password='';
 
@@ -83,6 +83,23 @@
         
         $bd=$pdo->prepare("INSERT INTO visiteur (nom_visit,prenom_visit,adresse_visit,tel_visit,datenais_visit,email_visit,mdp_visit) VALUES (?,?,?,?,?,?,?)");
         $bd->execute([$nom,$prenom,$adrs,$tel,$datenais,$email,$mdp]);
+        $to = $email;
+        $subject = "Bienvenue chez Parc d'attraction";
+        $message = "Bonjour ".$nom." ".$prenom.",<br>"."marhba ou alf marhba";
+
+        $headers = "From: nadiahanine19@gmail.com\r\n";
+        $headers .= "Reply-To: nadiahanine19@gmail.com\r\n";
+        $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+
+
+// Envoyer l'e-mail
+if (mail($to, $subject, $message, $headers)) {
+    echo "E-mail envoyé avec succès.";
+} else {
+    echo "Erreur lors de l'envoi de l'e-mail.";
+}
+
+
     }
  
         ?>
