@@ -276,6 +276,7 @@
         border-radius: 20px;
       }
     </style>
+    <?php include 'footer.php'; ?>
   </body>
 
 </html>
