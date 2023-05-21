@@ -57,6 +57,7 @@
 							<li><a class=" surbrillance dropdown-item" href="#">Attraction</a></li>
 							<li><a class="surbrillance dropdown-item" href="#">Restaurant</a></li>
 							<li><a class="surbrillance dropdown-item" href="#">Boutique</a></li>
+              <li><a class="surbrillance dropdown-item" href="billets.php">Billeterie</a></li>
 						</ul>
 
 					</li>
@@ -73,6 +74,9 @@
 								</ul>
 							</li>
 						</ul>
+            <ul class="navbar-nav">
+              
+          </ul>
 					</div>
 
 						<li id="qa" class="nav-item  ">
