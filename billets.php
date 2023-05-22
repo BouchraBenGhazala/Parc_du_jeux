@@ -178,6 +178,7 @@
             </div>
           </div>
         </nav>
+        <?php include "footer.php";?>
     </body>
 
 
@@ -186,7 +187,7 @@
         #cont_bg{
             height: 340px;
             background-color: red;
-            background-image: url("Images/park.jpg");
+            background-image: url("Images/manege-tournant.jpeg");
             border-radius: 10px;
     
         }
