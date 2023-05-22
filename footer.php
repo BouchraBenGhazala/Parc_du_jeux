@@ -9,14 +9,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
 
-    <?php
-    session_start();
-    ?>
-
+  
   </head>
 
 
-<footer class="sticky-footer text-center text-lg-start bg-light text-muted">
+<footer class="sticky-footer text-center  bg-light text-muted"> <!-- text-lg-start-->
  <!-- Section: Social media -->
  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
 	 <!-- Left -->
@@ -52,7 +49,7 @@
 
  <!-- Section: Links  -->
  <section class="">
-	 <div class="container text-center text-md-start mt-5">
+	 <div class="container text-center  mt-5"><!--text-md-start-->
 		 <!-- Grid row -->
 		 <div class="row mt-3">
 			 <!-- Grid column -->

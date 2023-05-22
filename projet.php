@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
 	<link href="/PROJETSIPHP/css/bootstrap.min.css" rel="stylesheet">
-		<link href="/PROJETSIPHP/font2/bootstrap-icons.min.css" rel="stylesheet">
+	<link href="/PROJETSIPHP/font2/bootstrap-icons.min.css" rel="stylesheet">
 	<script src="//code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="/PROJETSIPHP/js/bootstrap.min.js"></script>
 

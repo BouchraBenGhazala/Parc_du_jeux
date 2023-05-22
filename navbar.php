@@ -1,8 +1,3 @@
-
-<?php
-
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -14,34 +9,41 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
 
-    <?php
-    session_start();
-    ?>
+  
+    <style>
+  .sub-menu {
+    display: none;
+    font-weight: bold;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+  }
+
+  li:hover > .sub-menu {
+    display: flex;
+    flex-direction: row;
+  }
+
+  li > .sub-menu > li {
+    display: inline-block;
+    margin-right: 10px; /* Ajoute un espacement horizontal entre les mots des sous-menus */
+  }
+
+  li > .sub-menu > li:last-child {
+    margin-right: 0; /* Supprime l'espacement droit du dernier mot du sous-menu */
+  }
+
+  li > .sub-menu {
+    font-weight: inherit;
+  }
+</style>
 
   </head>
   <body>
-    <!--
-    <nav class="navbar navbar-expand-lg">
-      <a class="navbar-brand" href="#">
-        <img src="Images/logo.jpg" width="100" height="100" alt="logo du parc">
-      </a>
-      <ul class="navbar-nav ">
-        <li class="nav-item">
-            <a class="nav-link " href="acceuil.php"><span >Acceuil</span></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Infos pratiques</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="billets.php">Billeterie</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="contact.php">Contact</a>
-        </li>
-      </ul>
-    -->
+   
     <nav  class="navbar navbar-expand-lg">
-			<a class="navbar-brand fit-content surbrillance" href="#">
+			<a class="navbar-brand fit-content surbrillance" href="Acceuil.php">
 				<img src="Images/p3.jpeg" width="100" height="100" class="navbar-logo" alt="">
 			</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,7 +56,7 @@
 							Votre parc
 						</a>
 						<ul  class="dropdown-menu dropdown-menu-white sub-menu" aria-labelledby="navbarDarkDropdownMenuLink">
-							<li><a class=" surbrillance dropdown-item" href="#">Attraction</a></li>
+							<li><a class=" surbrillance dropdown-item" href="Attraction.php">Attraction</a></li>
 							<li><a class="surbrillance dropdown-item" href="#">Restaurant</a></li>
 							<li><a class="surbrillance dropdown-item" href="#">Boutique</a></li>
 						</ul>
@@ -67,14 +69,14 @@
 									Infos pratiques
 								</a>
 								<ul  class="dropdown-menu dropdown-menu-white sub-menu" aria-labelledby="navbarDarkDropdownMenuLink">
-									<li><a class=" surbrillance dropdown-item" href="#">Horaires</a></li>
-									<li><a class="surbrillance dropdown-item" href="#">Contact</a></li>
-									<li><a class="surbrillance dropdown-item" href="#">Tarifs</a></li>
+									<li><a class="surbrillance dropdown-item" href="horaire.php">Horaires</a></li>
+									<li><a class="surbrillance dropdown-item" href="contact.php">Contact</a></li>
+									<li><a class="surbrillance dropdown-item" href="billets.php">Billeterie</a></li>
+                  <li><a class="surbrillance dropdown-item" href="tarif.php">Tarifs</a></li>
 								</ul>
 							</li>
 						</ul>
 					</div>
-
 						<li id="qa" class="nav-item  ">
 						<a class="nav-link active surbrillance">
 						 Q&A
@@ -82,13 +84,10 @@
 					</li>
 				</ul>
 			</div>
-	</nav>
+       <!--Right side-->
 
 
-        <!--Right side-->
-
-
-              <ul class="navbar-nav m-sm-auto">
+       <ul class="navbar-nav m-sm-auto">
                   <li class="nav-item">
                     <a class="nav-link" href="authentif.php"><i class="bi bi-person"></i>S'authentifier</a>
                   </li>
@@ -104,6 +103,10 @@
                   ?>
 
               </ul>
+	</nav>
+
+
+       
 
 
     </nav>
@@ -111,6 +114,7 @@
     <div>
 
     </div>
+
 
     <style>
       .nav-link{

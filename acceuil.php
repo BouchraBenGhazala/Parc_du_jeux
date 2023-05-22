@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -10,7 +11,9 @@
         <link rel="stylesheet" href="Bootstrap files/css/bootstrap.min.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
- 
+		<script src="//code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="/PROJETSIPHP/js/bootstrap.min.js"></script>
+
 
 	<style>
 
@@ -148,8 +151,34 @@ footer {
 header {
   margin-left: 100px;
 }
+.image-text-container {
+  display: flex;
+  align-items: center;
+}
+
+.image-text-container .text {
+  margin-left: 10px;
+}
+.image-number-container {
+  display: flex;
+  align-items: center;
+}
+
+.image-number-container img {
+  width: 50%;
+  height: 50%;
+  margin-right: 10px;
+}
+.custom-height {
+  height: 200px; /* Remplacez 200px par la hauteur souhaitée */
+  width:400px;
+}
 </style>
-<script>
+</head>
+
+ <body>
+ <?php include "navbar.php";?>
+ <script>
 window.addEventListener('scroll', function() {
   var scrollPosition = window.pageYOffset;
   var windowHeight = window.innerHeight;
@@ -185,119 +214,130 @@ window.addEventListener('load', adjustContentMargin);
 // Appeler la fonction lors du redimensionnement de la fenêtre
 window.addEventListener('resize', adjustContentMargin);
 </script>
-</head>
-<header>
-	
-</header>
- <body>
- <nav  class="navbar navbar-expand-lg">
-			<a class="navbar-brand fit-content surbrillance" href="#">
-				<img src="Images/p3.jpeg" class="navbar-logo" alt="">
-			</a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle surbrillance active" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							Votre parc
-						</a>
-						<ul  class="dropdown-menu dropdown-menu-white sub-menu" aria-labelledby="navbarDarkDropdownMenuLink">
-							<li><a class=" surbrillance dropdown-item" href="#">Attraction</a></li>
-							<li><a class="surbrillance dropdown-item" href="#">Restaurant</a></li>
-							<li><a class="surbrillance dropdown-item" href="#">Boutique</a></li>
-						</ul>
 
-					</li>
-					<div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-						<ul class="navbar-nav">
-							<li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle active surbrillance" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-									Infos pratiques
-								</a>
-								<ul  class="dropdown-menu dropdown-menu-white sub-menu" aria-labelledby="navbarDarkDropdownMenuLink">
-									<li><a class=" surbrillance dropdown-item" href="#">Horaires</a></li>
-									<li><a class="surbrillance dropdown-item" href="#">Contact</a></li>
-									<li><a class="surbrillance dropdown-item" href="#">Tarifs</a></li>
-								</ul>
-							</li>
-						</ul>
-					</div>
-
-						<li id="qa" class="nav-item  ">
-						<a class="nav-link active surbrillance">
-						 Q&A
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link active surbrillance" aria-current="page" href="#">S'authentifier</a>
-					</li>
-				</ul>
+<div id="carouselExample" class="carousel slide  text-white border rounded " data-bs-ride="carousel" data-bs-interval="2000">
+	<div class="carousel-inner">
+		<div class="carousel-item active">
+			<img src="Images/ferris-wheel-against-blue-sky-with-clouds.jpg" class="d-block w-100" alt="Slide 1">
+			<div class="carousel-caption d-none d-md-block">
+				<h4 class="text-danger">Découvre nos roues de joie !</h4>
+				<a href="Attraction.php"><button class="btn btn-success">Je découvre</button></a>
 			</div>
-	</nav>
-	  <!--Right side-->
+		</div>
+		<div class="carousel-item">
+			<img src="Images/ferris-wheel.jpg" class="d-block w-100" alt="Slide 2">
+			<div class="carousel-caption d-none d-md-block">
+				<h4 class="text-danger">Découvre nos roues de joie !</h4>
+				<button class="btn btn-success">Je découvre</button>
+			</div>
+		</div>
+	</div>
+</div>
 
-
-	  <ul class="navbar-nav m-sm-auto">
-                  <li class="nav-item">
-                    <a class="nav-link" href="authentif.php"><i class="bi bi-person"></i>S'authentifier</a>
-                  </li>
-                  <?php
-                      if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 'visiteur') { 
-                        ?>
-                        <li class="nav-item">
-                        <form action="logout.php" method="POST">
-                          <button type="submit" class="nav-link" id="dcn">Déconnexion</button>
-                      </form>
-                      </li>
-                    <?php }
-                  ?>
-
-              </ul>
-
-	 <div id="carouselExample" class="carousel slide bg-danger text-white border rounded h-5 w-100" data-bs-ride="carousel" data-bs-interval="3000">
-	 	<div class="carousel-inner">
-	 		<div class="carousel-item active">
-	 			<img src="Images/p1.jpg" class="d-block w-100" alt="Slide 1">
-	 			<div class="carousel-caption">
-	 				<h5>Découvrez1</h5>
-	 				<p>Description de la slide 1</p>
-	 			</div>
-	 		</div>
-	 		<div class="carousel-item">
-	 			<img src="Images/p2.jpg" class="d-block w-100" alt="Slide 2">
-	 			<div class="carousel-caption">
-	 				<h5>Découvrez2</h5>
-	 				<p>Description de la slide 2</p>
-	 			</div>
-	 		</div>
-	 	</div>
-	 </div>
-	 <div id="carouselExample" class="carousel slide bg-danger text-white border rounded h-5 w-100" data-bs-ride="carousel" data-bs-interval="3000">
-	 	<div class="carousel-inner">
-	 		<div class="carousel-item active">
-	 			<img src="Images\colorful-ferris-wheel-with-clear-blue-sky.jpg" class="d-block w-100" alt="Slide 1">
-	 			<div class="carousel-caption">
-	 				<h5>Découvrez1</h5>
-	 				<p>Description de la slide 1</p>
-	 			</div>
-	 		</div>
-	 		<div class="carousel-item">
-	 			<img src="Images/p2.jpg" class="d-block w-100" alt="Slide 2">
-	 			<div class="carousel-caption">
-	 				<h5>Découvrez2</h5>
-	 				<p>Description de la slide 2</p>
-	 			</div>
-	 		</div>
-	 	</div>
-
+<br><br>	
+<div class="col-md 8">
+		<center><h1 class="Attract">LE FERRIS</h1></center>
+		<div class="container">
+		<font color="black">
+			<p style=" font-size:18px;">
+			Découvrez le frisson ultime au cœur de notre parc d'attraction 
+	        : le Ferris ! Montez à bord de cette imposante roue et préparez-vous à une expérience inoubliable. 
+	        Laissez-vous emporter par des vues à couper le souffle, surplombant tout le parc et ses environs. 
+	        Que ce soit en journée avec une vue panoramique sur le paysage environnant, ou en soirée lorsque les lumières de la ville scintillent, 
+	        chaque tour vous offrira des moments de pur émerveillement. Installez-vous confortablement et profitez de cette incroyable aventure qui 
+	        fera palpiter votre cœur et vous laissera des souvenirs inoubliables. Le Ferris du parc d'attraction : une expérience enivrante qui vous 
+	        transportera au sommet du bonheur !</p>
+		</font>
+	</div>
+</div>
+<div class="row">
       
+      <div class="col-md-12">
+        <center><a href="Attraction.php" class="btn btn-outline-success btn-lg" type="button">Regarde ici !</a></center>
+      </div>
+	  <br><br>
+<div class="row" id="txt" >
+	<div class="col-md 8">
+		<center><h1 class="Attract">LES ATTRACTIONS</h1></center>
+		<div class="container">
+		<font color="black">
+			<p style=" font-size:18px;">
+			Découvrez un monde de merveilles et de sensations inoubliables dans notre parc captivant. 
+			Plongez dans l'aventure en explorant des attractions palpitantes qui vous laisseront sans voix.
+			Des montagnes russes vertigineuses vous propulseront à des vitesses fulgurantes, tandis que les manèges à sensation vous feront tourbillonner dans tous les sens. 
+			Laissez-vous émerveiller par des spectacles époustouflants mettant en scène des acrobates talentueux et des animaux fascinants. 
+			Nos attractions familiales offrent des moments de joie et de rires partagés, créant des souvenirs précieux pour tous. 
+			Que vous soyez un aventurier en quête d'adrénaline ou à la recherche de moments magiques, notre parc regorge de surprises qui raviront les visiteurs de tous âges. 
+			Venez vivre une expérience inégalée et laissez-vous envoûter par les attractions uniques de notre parc !!</p>
+		</font>
+	</div>
+</div>
+<div class="row" id="txt" >
+      <div class="col-md-12">
+        <center><a href="tarif.php" class="btn btn-outline-success btn-lg" type="button">Découvre</a></center>
+      </div>
+</div>
+<br><br>
+<div id="carouselExample" width=50% heigh=50% alt="example"class="img-fluid rounded"style="float:right" class="carousel slide  text-white border rounded h-5 w-60" data-bs-ride="carousel" data-bs-interval="2000">
+	<div class="carousel-inner">
+		<div class="carousel-item active">
+			<img  src="Images/dandf.jpg" class="d-block w-100" alt="Slide 1">
+			<div class="carousel-caption d-none d-md-block">
+				<a href=""></a><h4 class="text-white">Besoin de décomprésser en famille ? Un manége c'est l'idéal!</h4>
+				<a href="tarif.php"><button class="btn btn-success">Nos tarifs</button></a>
+			</div>
+		</div>
+		<div class="carousel-item">
+			<img  src="Images/twof.jpg" class="d-block w-100" alt="Slide 2">
+			<div class="carousel-caption d-none d-md-block">
+				<h4 class="text-white">Soirée post boulot , quoi de mieux que des sensations fortes ?</h4>
+				<a href="tarif.php"><button class="btn btn-success">Nos tarifs</button></a>
+			</div>
+		</div>
+	</div>
+<div class="row" id="txt" >
+	<div class="col-md 8">
+		<center><h1 class="Attract">Nos réstaurants</h1></center>
+		<div class="container">
+			<font color="black">
+				<p style=" font-size:18px;">
+				Découvrez un festival de saveurs et de délices dans les restaurants de notre parc enchanteur. 
+			    Nos établissements gastronomiques vous invitent à un voyage culinaire exquis, où chaque bouchée est une véritable expérience gustative.
+			    Des chefs talentueux préparent des plats raffinés avec des ingrédients frais et de saison,
+			    offrant une cuisine créative qui ravira les papilles les plus exigeantes.
+			    Que vous préfériez les mets traditionnels ou les cuisines du monde, 
+			    notre sélection diversifiée de restaurants saura satisfaire tous les palais. 
+			    Dégustez des plats succulents dans une ambiance chaleureuse et conviviale, 
+			    ou optez pour une expérience gastronomique élégante et sophistiquée. De plus, 
+			    nos restaurants offrent des options adaptées à tous les régimes alimentaires, 
+			    garantissant une expérience culinaire accessible à tous. Venez vous régaler dans nos restaurants 
+			   e t laissez-vous emporter par une symphonie de saveurs qui éveilleront vos sens à chaque bouchée.</p>
+		    </font>
+	    </div>
+    </div>
+</div>
+<div id="carouselExample" width=50% heigh=50% alt="example"class="img-fluid rounded"style="float:right" class="carousel slide  text-white border rounded h-5 w-60" data-bs-ride="carousel" data-bs-interval="2000">
+	<div class="carousel-inner">
+		<div class="carousel-item active">
+			<img  src="Images/couscous.jpg" class="d-block w-100" alt="Slide 1">
+			<div class="carousel-caption d-none d-md-block">
+				<a href=""></a><h4 class="text-white">Envie Marocaine</h4>
+				<a href="tarif.php"><button class="btn btn-success">Réservez votre table</button></a>
+			</div>
+		</div>
+		<div class="carousel-item">
+			<img  src="Images/pizza.jpg" class="d-block w-100" alt="Slide 2">
+			<div class="carousel-caption d-none d-md-block">
+				<h4 class="text-white">Envie Italienne</h4>
+				<a href="tarif.php"><button class="btn btn-success">Réservez votre table</button></a>
+			</div>
+		</div>
+	</div>
+</div>
 
-
-
-	 <hr><hr><!-- Footer -->
-<?php include "footer.php"?>
+	<br>  <!-- Footer -->
+	<br><br> <br><br> <br><br> <br><br> <br><br> <br><br> <br><br> 
+<?php include "footer.php";?>
 </body>
 
 </html>
