@@ -54,7 +54,7 @@
 							Votre parc
 						</a>
 						<ul  class="dropdown-menu dropdown-menu-white sub-menu" aria-labelledby="navbarDarkDropdownMenuLink">
-							<li><a class=" surbrillance dropdown-item" href="#">Attraction</a></li>
+							<li><a class=" surbrillance dropdown-item" href="attraction.php">Attraction</a></li>
 							<li><a class="surbrillance dropdown-item" href="#">Restaurant</a></li>
 							<li><a class="surbrillance dropdown-item" href="#">Boutique</a></li>
               <li><a class="surbrillance dropdown-item" href="billets.php">Billeterie</a></li>
@@ -68,9 +68,9 @@
 									Infos pratiques
 								</a>
 								<ul  class="dropdown-menu dropdown-menu-white sub-menu" aria-labelledby="navbarDarkDropdownMenuLink">
-									<li><a class=" surbrillance dropdown-item" href="#">Horaires</a></li>
-									<li><a class="surbrillance dropdown-item" href="#">Contact</a></li>
-									<li><a class="surbrillance dropdown-item" href="#">Tarifs</a></li>
+									<li><a class=" surbrillance dropdown-item" href="horaires.php">Horaires</a></li>
+									<li><a class="surbrillance dropdown-item" href="contact.php">Contact</a></li>
+									<li><a class="surbrillance dropdown-item" href="tarif.php">Tarifs</a></li>
 								</ul>
 							</li>
 						</ul>
