@@ -114,6 +114,9 @@
   display: none; /* Masquer les sous-menus par défaut */
 	font-weight: bold;
 }
+button{
+	color: blueviolet;
+}
 
 li:hover > .sub-menu {
   display: flex;; /* Afficher les sous-menus au survol de l'élément parent */
@@ -221,14 +224,14 @@ window.addEventListener('resize', adjustContentMargin);
 			<img src="Images/ferris-wheel-against-blue-sky-with-clouds.jpg" class="d-block w-100" alt="Slide 1">
 			<div class="carousel-caption d-none d-md-block">
 				<h4 class="text-danger">Découvre nos roues de joie !</h4>
-				<a href="Attraction.php"><button class="btn btn-success">Je découvre</button></a>
+				<a href="Attraction.php"><button class="btn btn-outline-dark btn-lg">Je découvre</button></a>
 			</div>
 		</div>
 		<div class="carousel-item">
 			<img src="Images/ferris-wheel.jpg" class="d-block w-100" alt="Slide 2">
 			<div class="carousel-caption d-none d-md-block">
 				<h4 class="text-danger">Découvre nos roues de joie !</h4>
-				<button class="btn btn-success">Je découvre</button>
+				<center><a href="Attraction.php" class="btn btn-outline-dark btn-lg " style="color:purple;" type="button">Je découvre !</a></center>
 			</div>
 		</div>
 	</div>
@@ -253,7 +256,7 @@ window.addEventListener('resize', adjustContentMargin);
 <div class="row">
       
       <div class="col-md-12">
-        <center><a href="Attraction.php" class="btn btn-outline-success btn-lg" type="button">Regarde ici !</a></center>
+        <center><a href="Attraction.php" class="btn btn-outline-dark btn-lg" style="color:purple;" type="button">Regarde ici !</a></center>
       </div>
 	  <br><br>
 <div class="row" id="txt" >
@@ -274,7 +277,8 @@ window.addEventListener('resize', adjustContentMargin);
 </div>
 <div class="row" id="txt" >
       <div class="col-md-12">
-        <center><a href="tarif.php" class="btn btn-outline-success btn-lg" type="button">Découvre</a></center>
+        
+	  <center><a href="Attraction.php" class="btn btn-outline-dark btn-lg" style="color:purple;" type="button">Regarde ici !</a></center>
       </div>
 </div>
 <br><br>
@@ -283,15 +287,15 @@ window.addEventListener('resize', adjustContentMargin);
 		<div class="carousel-item active">
 			<img  src="Images/dandf.jpg" class="d-block w-100" alt="Slide 1">
 			<div class="carousel-caption d-none d-md-block">
-				<a href=""></a><h4 class="text-white">Besoin de décomprésser en famille ? Un manége c'est l'idéal!</h4>
-				<a href="tarif.php"><button class="btn btn-success">Nos tarifs</button></a>
+				<h4 class="text-white">Besoin de décomprésser en famille ? Un manége c'est l'idéal!</h4>
+				<a href="tarif.php" class="btn btn-outline-dark btn-lg" style="color:purple;" type="button">Nos tarifs</a>
 			</div>
 		</div>
 		<div class="carousel-item">
 			<img  src="Images/twof.jpg" class="d-block w-100" alt="Slide 2">
 			<div class="carousel-caption d-none d-md-block">
 				<h4 class="text-white">Soirée post boulot , quoi de mieux que des sensations fortes ?</h4>
-				<a href="tarif.php"><button class="btn btn-success">Nos tarifs</button></a>
+				<a href="tarif.php"><button  style="color:purple;" class="btn btn-success">Nos tarifs</button></a>
 			</div>
 		</div>
 	</div>
@@ -322,21 +326,21 @@ window.addEventListener('resize', adjustContentMargin);
 			<img  src="Images/couscous.jpg" class="d-block w-100" alt="Slide 1">
 			<div class="carousel-caption d-none d-md-block">
 				<a href=""></a><h4 class="text-white">Envie Marocaine</h4>
-				<a href="tarif.php"><button class="btn btn-success">Réservez votre table</button></a>
+				<center><a href="#" class="btn btn-outline-dark btn-lg" style="color:purple;" type="button">Réservez votre table !</a></center>
 			</div>
 		</div>
 		<div class="carousel-item">
 			<img  src="Images/pizza.jpg" class="d-block w-100" alt="Slide 2">
 			<div class="carousel-caption d-none d-md-block">
 				<h4 class="text-white">Envie Italienne</h4>
-				<a href="tarif.php"><button class="btn btn-success">Réservez votre table</button></a>
+				<center><a href="#" class="btn btn-outline-light btn-lg" style="color:purple;" type="button">Réservez votre table !</a></center>
 			</div>
 		</div>
 	</div>
 </div>
 
 	<br>  <!-- Footer -->
-	<br><br> <br><br> <br><br> <br><br> <br><br> <br><br> <br><br> 
+	<br><br> <br><br> <br><br> <br><br> <br><br> <br><br> <br><br> <br><br> <br><br> <br><br> <br><br> <br><br> <br><br>  <br><br> <br><br> <br><br> <br><br>  <br><br> <br><br> <br><br> <br><br>  <br><br> <br><br> <br><br> <br><br>  <br><br> <br><br> <br><br> <br><br>  <br><br> <br><br> <br><br> <br><br>  <br><br> <br><br> <br><br> <br><br> 
 <?php include "footer.php";?>
 </body>
 
