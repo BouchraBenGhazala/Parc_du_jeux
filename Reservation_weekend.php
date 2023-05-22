@@ -49,7 +49,7 @@
         ?>
         <div class="container ">
             <div class="row d-flex justify-content-center align-items-center">
-                <img src="Images/logo.jpg" alt="logo" width="150px">
+                <img src="Images/p3.jpeg" alt="logo" width="150px">
             </div>
             <div class="row d-flex justify-content-center align-items-center">
             <?php

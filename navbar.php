@@ -39,6 +39,7 @@
   }
 </style>
 
+  <?php session_start() ?>
   </head>
   <body>
    
@@ -102,7 +103,8 @@
                           <button type="submit" class="nav-link" id="dcn">Déconnexion</button>
                       </form>
                       </li>
-                    <?php }
+                    <?php 
+                    }
                   ?>
 
               </ul>
