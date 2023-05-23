@@ -39,7 +39,6 @@
   }
 </style>
 
-  <?php session_start() ?>
   </head>
   <body>
    
@@ -57,7 +56,7 @@
 							Votre parc
 						</a>
 						<ul  class="dropdown-menu dropdown-menu-white sub-menu" aria-labelledby="navbarDarkDropdownMenuLink">
-							<li><a class=" surbrillance dropdown-item" href="#">Attraction</a></li>
+							<li><a class=" surbrillance dropdown-item" href="Attraction.php">Attraction</a></li>
 							<li><a class="surbrillance dropdown-item" href="#">Restaurant</a></li>
 							<li><a class="surbrillance dropdown-item" href="#">Boutique</a></li>
               <li><a class="surbrillance dropdown-item" href="billets.php">Billeterie</a></li>
@@ -71,9 +70,14 @@
 									Infos pratiques
 								</a>
 								<ul  class="dropdown-menu dropdown-menu-white sub-menu" aria-labelledby="navbarDarkDropdownMenuLink">
-									<li><a class=" surbrillance dropdown-item" href="#">Horaires</a></li>
+									<li><a class=" surbrillance dropdown-item" href="horaire.php">Horaires</a></li>
+<<<<<<< HEAD
+									<li><a class="surbrillance dropdown-item" href="contact.php">Contact</a></li>
+									<li><a class="surbrillance dropdown-item" href="tarif.php">Tarifs</a></li>
+=======
 									<li><a class="surbrillance dropdown-item" href="#">Contact</a></li>
 									<li><a class="surbrillance dropdown-item" href="#">Tarifs</a></li>
+>>>>>>> 505bfef627aca0c4eb12d3351da175b08ea9f97a
 								</ul>
 							</li>
 						</ul>
