@@ -71,7 +71,7 @@
 									Infos pratiques
 								</a>
 								<ul  class="dropdown-menu dropdown-menu-white sub-menu" aria-labelledby="navbarDarkDropdownMenuLink">
-									<li><a class=" surbrillance dropdown-item" href="#">Horaires</a></li>
+									<li><a class=" surbrillance dropdown-item" href="horaire.php">Horaires</a></li>
 									<li><a class="surbrillance dropdown-item" href="#">Contact</a></li>
 									<li><a class="surbrillance dropdown-item" href="#">Tarifs</a></li>
 								</ul>
