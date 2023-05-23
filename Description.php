@@ -22,14 +22,14 @@
    
     
     <div class="container">
-        <div class="row text-center bg-danger">
+        <div class="row text-center bg-danger" style="border-radius:20px;">
             <h1 class="text-uppercase">
                 <?=$row['nom_attra']; ?>
 
             </h1>
         </div>
         <div class="row mt-5">
-            <div class="col-md-5" id="text">
+            <div class="col-md-5 bg-warning" id="text">
                 <?=$row['descr']; ?>
             </div>
             
@@ -38,19 +38,19 @@
                 <div class="image-overlay">
                     <div class="float-start ml-5 ">
                         <center>
-                            <i class="bi bi-person-fill h3"></i>
+                            <i class="bi bi-person-fill h5"></i>
                         </center>
                         <?= $row['taille_min']; ?>cm
                     </div>
                     <div class="float-end mr-5">
                         <center>
-                            <i class="bi bi-people-fill h3 "></i>
+                            <i class="bi bi-people-fill h5 "></i>
                         </center>
                         <?= $row['capacite'] ; ?>Per
                     </div>
                     <div>
                         <center>
-                            <i class="bi bi-clock-fill h3"></i>
+                            <i class="bi bi-clock-fill h5"></i>
                             <br>
                             <?= $row['duree']; ?>
                         </center>
@@ -65,7 +65,9 @@
     <style>
         #image{
             border: 3px solid black; 
-             
+            height: 480px; 
+            width: 700px; 
+            border-radius: 20px;
         }
         .image-overlay {
             background-color: rgba(0, 0, 0, 0.5); /* Couleur de fond transparente */
@@ -73,8 +75,9 @@
             position: absolute; /* Position absolue pour se superposer à l'image */
             bottom: 0; /* Alignement au bas de l'image */
             width: 96.5%; /* Largeur de la barre */
-            height: 17%;
+            height: 13%;
             padding: 8px; /* Espacement interne */
+            border-radius: 20px;
         }
         #text{
             font-size: 17px;
@@ -82,7 +85,11 @@
             font-family: 'Lobster', cursive;
             font-family: 'Playfair Display', serif;
             font-family: 'Wix Madefor Display', sans-serif;
-            margin-top: 3%;
+            margin-top: 4%;
+            margin-bottom: 5%;
+            border-radius: 20px;
+            padding: 3%;
+            height: 370px;
         }
     </style>
     <?php include 'footer.php'; ?>
