@@ -5,7 +5,7 @@
         } catch (PDOException $e) {
             die('Ereur de connexion: ' . $e->getmessage());
         }
-        $sql= $conn->prepare("SELECT nom_attra , descr , taille_min , duree , capacite FROM attraction WHERE id_attra=?");
+        $sql= $conn->prepare("SELECT nom_attra , descr , taille_min , duree , capacite , image_attra FROM attraction WHERE id_attra=?");
         $sql->execute(array($_GET['id']));
         $row=$sql->fetch();
     }
@@ -23,7 +23,7 @@
     
     <div class="container">
         <div class="row text-center bg-danger">
-            <h1 >
+            <h1 class="text-uppercase">
                 <?=$row['nom_attra']; ?>
 
             </h1>
@@ -34,7 +34,7 @@
             </div>
             
             <div class="col-md-7">
-                <img src="Images/Grand.png" alt="Description de l'image" class="img-fluid" id="image">
+                <img src="<?= $row['image_attra']; ?>" alt="Description de l'image" class="img-fluid" id="image">
                 <div class="image-overlay">
                     <div class="float-start ml-5 ">
                         <center>
