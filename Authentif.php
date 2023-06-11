@@ -16,7 +16,7 @@
     <?php
         session_start();
         $host='localhost';
-        $dbname='parc_du_jeux';
+        $dbname='parc2';
         $username='root';
         $password='';
     
@@ -116,7 +116,7 @@
                             header('Location: billets.php');
                             exit;
 
-                        }
+                        }/*
                             // Vérifier dans la table "employe"
                             $employeQuery = $pdo->prepare("SELECT * FROM employe WHERE email_emp = ? AND mdp_emp = ?");
                             $employeQuery->execute([$email, $mdp]);
@@ -141,7 +141,7 @@
                                 exit;
                             }
                                 // Les informations de connexion sont incorrectes
-                                echo 'Identifiants invalides';
+                                echo 'Identifiants invalides';*/
                             }
                 ?>
                 </div> 

@@ -16,7 +16,7 @@
 
         $host='localhost';
         // $dbname='test0';
-        $dbname='parc_du_jeux';
+        $dbname='parc2';
         $username='root';
         $password='';
         
@@ -51,7 +51,7 @@
                 <div class="col-sm-4 text-center">
                     <div class="container" id="cont_bg">
                         <?php
-                         $sql1 = "SELECT * FROM tarif";
+                         $sql1 = "SELECT * FROM tarif2";
                          $result = $conn->query($sql1);
 
               
