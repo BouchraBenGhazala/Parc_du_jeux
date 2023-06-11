@@ -71,7 +71,7 @@ session_start();
 
     $host='localhost';
     // $dbname='test0';
-    $dbname='parc_du_jeux';
+    $dbname='parc2';
     $username='root';
     $password='';
     
@@ -124,7 +124,7 @@ session_start();
         </div>
         <br>
         <?php
-            $sql1 = "SELECT * FROM tarif";
+            $sql1 = "SELECT * FROM tarif2";
             $result = $conn->query($sql1);
 
             if ($result->num_rows > 0){
@@ -205,7 +205,7 @@ session_start();
                 
             }
 
-            $sql3="SELECT id_tarif FROM tarif WHERE descr='Billet premium'";
+            $sql3="SELECT id_tarif FROM tarif2 WHERE descr='Billet premium'";
             $result2=$conn->query($sql3);
             if ($result2 && $result2->num_rows > 0) {
                 $row2 = $result2->fetch_assoc();

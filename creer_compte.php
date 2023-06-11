@@ -82,7 +82,7 @@
             $datenais=$_POST['datenais_visit'];
             $mdp=$_POST['mdp_visit'];
         
-        $bd=$pdo->prepare("INSERT INTO visiteur (nom_visit,prenom_visit,adresse_visit,tel_visit,datenais_visit,email_visit,mdp_visit) VALUES (?,?,?,?,?,?,?)");
+        $bd=$pdo->prepare("INSERT INTO visiteur(nom_visit,prenom_visit,adresse_visit,tel_visit,datenais_visit,email_visit,mdp_visit) VALUES (?,?,?,?,?,?,?)");
         $bd->execute([$nom,$prenom,$adrs,$tel,$datenais,$email,$mdp]);
         $to = $email;
         $subject = "Bienvenue chez Parc d'attraction";
@@ -111,8 +111,6 @@ if (mail($to, $subject, $message, $headers)) {
 } else {
     echo "Erreur lors de l'envoi de l'e-mail.";
 }
-
-
     }
  
         ?>

@@ -1,44 +1,5 @@
 <?php
 session_start();
-        
-        if($_SERVER["REQUEST_METHOD"]=='POST'){
-            /*
-            $currentDateTime = date('Y-m-d H:i:s');
-
-            $id_visit=$_SESSION['visit_id'];
-        
-           $db1=$conn->prepare("INSERT INTO reservation(date_reserv,id_visit_fk) VALUES (?,?)");
-            $db1->execute([$currentDateTime,$id_visit]);
-
-            $sql2 = "SELECT id_reserv FROM reservation ORDER BY id_reserv DESC LIMIT 1";
-            $result1 = $conn->query($sql2);
-            if ($result1 && $result1->num_rows > 0) {
-                $row1 = $result1->fetch_assoc();
-                $id_reserv = $row1['id_reserv'];
-                
-            }
-
-            $sql3="SELECT id_tarif FROM tarif WHERE descr='Billet semaine'";
-            $result2=$conn->query($sql3);
-            if ($result2 && $result2->num_rows > 0) {
-                $row2 = $result2->fetch_assoc();
-                $id_tarif = $row2['id_tarif'];
-                
-            }
-
-            $date_visite=$_POST['date_visite'];
-            $quantite_adulte=$_POST['ajout_adulte'];
-            $quantite_enfant=$_POST['ajout_enfant'];
-
-            // echo $date_visite;
-            // echo "<br>".$quantite_adulte;
-            // echo "<br>".$quantite_enfant;
-            // echo "<br>".$id_reserv;
-            // echo "<br>".$id_tarif;
-           
-            $db2=$conn->prepare("INSERT INTO billet(date_visite,quantité_adulte,quantité_enfant,id_tarif_fk,id_reserv_fk) VALUES (?,?,?,?,?)");
-            $db2->execute([$date_visite,$quantite_adulte,$quantite_enfant,$id_tarif,$id_reserv]);
-        }*/
         require_once('fpdf185/fpdf.php');
         require_once('MonPdf.php');
         
@@ -97,12 +58,6 @@ session_start();
                 echo 'Erreur de connexion à la base de données : ' . $e->getMessage();
             }
         }
-        
-            
-        }
-        
-        
-        
         ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -112,7 +67,7 @@ session_start();
         <link rel="stylesheet" href="Bootstrap files/css/bootstrap.min.css">
 
     <?php
-    
+    session_start();
 
     $host='localhost';
     // $dbname='test0';
@@ -140,7 +95,7 @@ session_start();
         // Access the user type and perform actions for employees
         echo "<br>".'Connecté en tant que visiteur';
         // echo "<br>"."Bienvenue ".$_SESSION['username'];
-        //$_SESSION['useremail'], $_SESSION['visit_id']
+
         // Rest of your code for the employe.php file
 
     }
@@ -164,9 +119,8 @@ session_start();
                 <?php
                     } ?>
             </div>
-            
         <div class="row d-flex justify-content-center align-items-center">
-            <h4><br>Sélectionnez <span id="gros">la quantité de billets</span> que vous souhaitez.</h4>
+            <h4>Sélectionnez <span id="gros">la quantité de billets</span> que vous souhaitez.</h4>
         </div>
         <br>
         <?php
@@ -187,7 +141,7 @@ session_start();
             }
 
                         ?>
-        <form method="POST">
+        <form method="POST" >
         <div class="row flex-column flex-sm-row">
             <div class="col-sm-6">
                 <div class="container" id="container">
@@ -234,7 +188,44 @@ session_start();
         <br>
         </form>
 
+        <?php
+        if($_SERVER["REQUEST_METHOD"]=='POST'){
+            $currentDateTime = date('Y-m-d H:i:s');
+
+            $id_visit=$_SESSION['visit_id'];
         
+            $db1=$conn->prepare("INSERT INTO reservation(date_reserv,id_visit_fk) VALUES (?,?)");
+            $db1->execute([$currentDateTime,$id_visit]);
+
+            $sql2 = "SELECT id_reserv FROM reservation ORDER BY id_reserv DESC LIMIT 1";
+            $result1 = $conn->query($sql2);
+            if ($result1 && $result1->num_rows > 0) {
+                $row1 = $result1->fetch_assoc();
+                $id_reserv = $row1['id_reserv'];
+                
+            }
+
+            $sql3="SELECT id_tarif FROM tarif2 WHERE descr='Billet semaine'";
+            $result2=$conn->query($sql3);
+            if ($result2 && $result2->num_rows > 0) {
+                $row2 = $result2->fetch_assoc();
+                $id_tarif = $row2['id_tarif'];
+                
+            }
+
+            $date_visite=$_POST['date_visite'];
+            $quantite_adulte=$_POST['ajout_adulte'];
+            $quantite_enfant=$_POST['ajout_enfant'];
+
+            // echo $date_visite;
+            // echo "<br>".$quantite_adulte;
+            // echo "<br>".$quantite_enfant;
+            // echo "<br>".$id_reserv;
+            // echo "<br>".$id_tarif;
+           
+            $db2=$conn->prepare("INSERT INTO billet(date_visite,quantité_adulte,quantité_enfant,id_tarif_fk,id_reserv_fk) VALUES (?,?,?,?,?)");
+            $db2->execute([$date_visite,$quantite_adulte,$quantite_enfant,$id_tarif,$id_reserv]);}
+        ?>
         </div>
 
 
@@ -279,6 +270,3 @@ session_start();
 
     </body>
 </html>
-
-
-
