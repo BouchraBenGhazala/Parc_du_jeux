@@ -72,6 +72,7 @@
             </div>
             </form>
         <?php
+        
     if($_SERVER['REQUEST_METHOD']=='POST'){
             $nom=$_POST['nom_visit'];
             $prenom=$_POST['prenom_visit'];
@@ -85,10 +86,22 @@
         $bd->execute([$nom,$prenom,$adrs,$tel,$datenais,$email,$mdp]);
         $to = $email;
         $subject = "Bienvenue chez Parc d'attraction";
-        $message = "Bonjour ".$nom." ".$prenom.",<br>"."marhba ou alf marhba";
+        $message = "Cher(e) $nom $prenom,<br>
 
-        $headers = "From: nadiahanine19@gmail.com\r\n";
-        $headers .= "Reply-To: nadiahanine19@gmail.com\r\n";
+        Nous vous souhaitons la bienvenue sur notre site d'attraction ! Nous sommes ravis que vous ayez choisi de vous inscrire et de rejoindre notre communauté.<br>
+        
+        Notre site propose une large gamme d'attractions passionnantes et divertissantes pour tous les âges. Que vous soyez à la recherche de sensations fortes, de spectacles incroyables ou de moments de détente en famille, nous avons tout ce qu'il vous faut.<br>
+        
+        Nous vous invitons à parcourir notre site et à découvrir toutes les attractions que nous proposons. N'hésitez pas à contacter notre équipe si vous avez des questions ou besoin d'assistance. Nous sommes là pour vous aider !<br>
+        
+        Encore une fois, bienvenue sur notre site d'attraction. Nous espérons que vous passerez un moment inoubliable parmi nous.<br>
+        
+        Cordialement,
+        ";
+        
+
+        $headers = "From: mohamedhammad25@gmail.com\r\n";
+        $headers .= "Reply-To: mohamedhammad25@gmail.com\r\n";
         $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
 
