@@ -74,14 +74,14 @@
 
        <div class="card shadow-lg m-4 col-md-4" style="width: 300px; height: 330px; border-radius: 20px">
           <a href="Description.php?id=1" id="redirection">
-            <img src="Images/Grand.png"  class="card-img-top mt-3" id="Image-card">
+            <?php 
+            $sql=$conn->query("SELECT nom_attra,taille_min,capacite,image_attra FROM attraction where id_attra=1");
+            $row=$sql->fetch();
+            ?>
+            <img src="<?= $row['image_attra']?>"  class="card-img-top mt-3" id="Image-card">
             <div class="card-body pl-3">
               <h4 class="card-title text-success">
-              <?php 
-                $sql=$conn->query("SELECT nom_attra,taille_min,capacite FROM attraction where id_attra=1");
-                $row=$sql->fetch();
-                echo $row['nom_attra'];
-                ?>
+              <?= $row['nom_attra'];?>
               </h4>
               <i class="bi bi-person-fill"> <?=$row['taille_min'];?>cm</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <i class="bi bi-people-fill"> <?= $row['capacite']; ?> Personnes</i>
@@ -92,14 +92,14 @@
 
         <div class="card shadow-lg m-4 col-md-4" style="width: 300px; height: 330px; border-radius: 20px">
           <a href="Description.php?id=2" id="redirection">
-            <img src="Images/bateau-pirate.jpg"  class="card-img-top mt-3" id="Image-card">
+            <?php 
+            $sql=$conn->query("SELECT nom_attra,taille_min,capacite,image_attra FROM attraction where id_attra=2");
+            $row=$sql->fetch();
+            ?>
+            <img src="<?= $row['image_attra']?>"  class="card-img-top mt-3" id="Image-card">
             <div class="card-body pl-3">
               <h4 class="card-title text-success">
-              <?php 
-                $sql=$conn->query("SELECT nom_attra,taille_min,capacite FROM attraction where id_attra=2");
-                $row=$sql->fetch();
-                echo $row['nom_attra'];
-                ?>
+              <?= $row['nom_attra'];?>
               </h4><br>
               <i class="bi bi-person-fill"> <?=$row['taille_min'];?>cm</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <i class="bi bi-people-fill"> <?= $row['capacite']; ?> Personnes</i>
@@ -109,14 +109,14 @@
 
         <div class="card shadow-lg m-4 col-md-4" style="width: 300px; height: 330px; border-radius: 20px">
           <a href="Description.php?id=3" id="redirection">
-            <img src="Images/RoueFerris.jpg"  class="card-img-top mt-3" id="Image-card">
+            <?php 
+            $sql=$conn->query("SELECT nom_attra,taille_min,capacite,image_attra FROM attraction where id_attra=3");
+            $row=$sql->fetch();
+            ?>
+            <img src="<?= $row['image_attra']?>"  class="card-img-top mt-3" id="Image-card">
             <div class="card-body pl-3">
               <h4 class="card-title text-success">
-              <?php 
-                $sql=$conn->query("SELECT nom_attra,taille_min,capacite FROM attraction where id_attra=3");
-                $row=$sql->fetch();
-                echo $row['nom_attra'];
-                ?>
+              <?= $row['nom_attra'];?>
               </h4><br>
               <i class="bi bi-person-fill"> <?=$row['taille_min'];?>cm</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <i class="bi bi-people-fill"> <?= $row['capacite']; ?> Personnes</i>
@@ -129,13 +129,14 @@
 
         <div class="card shadow-lg m-4 col-md-4" style="width: 300px; height: 330px; border-radius: 20px">
           <a href="Description.php?id=4" id="redirection">
-            <img src="Images/donjon-extreme.jpg"  class="card-img-top mt-3" id="Image-card">
+            <?php 
+            $sql=$conn->query("SELECT nom_attra,taille_min,capacite,image_attra FROM attraction where id_attra=4");
+            $row=$sql->fetch();
+            ?>
+            <img src="<?= $row['image_attra']?>"  class="card-img-top mt-3" id="Image-card">
             <div class="card-body pl-3">
               <h4 class="card-title text-success">
-              <?php 
-                $sql=$conn->query("SELECT nom_attra,taille_min,capacite FROM attraction where id_attra=4");
-                $row=$sql->fetch();
-                echo $row['nom_attra'];
+              <?= $row['nom_attra'];
                 ?>
               </h4><br>
               <i class="bi bi-person-fill"> <?=$row['taille_min'];?>cm</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -147,35 +148,41 @@
     
       
         <div class="card shadow-lg m-4 col-md-4" style="width: 300px; height: 330px; border-radius: 20px">
-          <a href="Description.php?id=5" id="redirection"><img src="Images/manege-tournant.jpeg"  class="card-img-top mt-3" id="Image-card">
-          <div class="card-body pl-3">
-            <h4 class="card-title text-success">
-            <?php 
-              $sql=$conn->query("SELECT nom_attra,taille_min,capacite FROM attraction where id_attra=5");
-              $row=$sql->fetch();
-              echo $row['nom_attra'];
-              ?>
-            </h4><br>
-            <i class="bi bi-person-fill"> <?=$row['taille_min'];?>cm</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <i class="bi bi-people-fill"> <?= $row['capacite']; ?> Personnes</i>
-          </div></a>
+          <a href="Description.php?id=5" id="redirection">
+          <?php 
+            $sql=$conn->query("SELECT nom_attra,taille_min,capacite,image_attra FROM attraction where id_attra=5");
+            $row=$sql->fetch();
+            ?>
+            <img src="<?= $row['image_attra']?>"  class="card-img-top mt-3" id="Image-card">
+            <div class="card-body pl-3">
+              <h4 class="card-title text-success">
+              <?= $row['nom_attra'];
+                ?>
+              </h4><br>
+              <i class="bi bi-person-fill"> <?=$row['taille_min'];?>cm</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <i class="bi bi-people-fill"> <?= $row['capacite']; ?> Personnes</i>
+            </div>
+          </a>
         </div>
       
     
       
         <div class="card shadow-lg m-4 col-md-4" style="width: 300px; height: 330px; border-radius: 20px;">
-        <a href="Description.php?id=6" id="redirection"><img src="Images/crampus.png"  class="card-img-top mt-3" id="Image-card">
+        <a href="Description.php?id=6" id="redirection">
+        <?php 
+            $sql=$conn->query("SELECT nom_attra,taille_min,capacite,image_attra FROM attraction where id_attra=6");
+            $row=$sql->fetch();
+            ?>
+          <img src="<?= $row['image_attra']?>"  class="card-img-top mt-3" id="Image-card">
           <div class="card-body pl-3">
             <h4 class="card-title text-success">
-            <?php 
-              $sql=$conn->query("SELECT nom_attra,taille_min,capacite FROM attraction where id_attra=6");
-              $row=$sql->fetch();
-              echo $row['nom_attra'];
+            <?= $row['nom_attra'];
               ?>
             </h4><br>
             <i class="bi bi-person-fill"> <?=$row['taille_min'];?>cm</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <i class="bi bi-people-fill"> <?= $row['capacite']; ?> Personnes</i>
-          </div></a>
+          </div>
+        </a>
         </div>
       
         
@@ -191,13 +198,14 @@
 
         <div class="card shadow-lg m-4 col-md-4" style="width: 300px; height: 330px; border-radius: 20px">
           <a href="Description.php?id=7" id="redirection">
-            <img src="Images/serpent.jpg"  class="card-img-top mt-3" id="Image-card">
+          <?php 
+            $sql=$conn->query("SELECT nom_attra,taille_min,capacite,image_attra FROM attraction where id_attra=7");
+            $row=$sql->fetch();
+            ?>
+            <img src="<?= $row['image_attra']?>"  class="card-img-top mt-3" id="Image-card">
             <div class="card-body pl-3">
               <h4 class="card-title text-success">
-              <?php 
-                $sql=$conn->query("SELECT nom_attra,taille_min,capacite FROM attraction where id_attra=7");
-                $row=$sql->fetch();
-                echo $row['nom_attra'];
+              <?= $row['nom_attra'];
                 ?>
               </h4><br>
               <i class="bi bi-person-fill"> <?=$row['taille_min'];?>cm</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -209,13 +217,14 @@
 
         <div class="card shadow-lg m-4 col-md-4" style="width: 300px; height: 330px; border-radius: 20px">
           <a href="Description.php?id=8" id="redirection">
-            <img src="Images/riviere.png"  class="card-img-top mt-3" id="Image-card">
+          <?php 
+            $sql=$conn->query("SELECT nom_attra,taille_min,capacite,image_attra FROM attraction where id_attra=8");
+            $row=$sql->fetch();
+            ?>
+            <img src="<?= $row['image_attra']?>"  class="card-img-top mt-3" id="Image-card">
             <div class="card-body pl-3">
               <h4 class="card-title text-success">
-              <?php 
-                $sql=$conn->query("SELECT nom_attra,taille_min,capacite FROM attraction where id_attra=8");
-                $row=$sql->fetch();
-                echo $row['nom_attra'];
+              <?=$row['nom_attra'];
                 ?>
               </h4><br>
               <i class="bi bi-person-fill"> <?=$row['taille_min'];?>cm</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -227,13 +236,14 @@
 
         <div class="card shadow-lg m-4 col-md-4" style="width: 300px; height: 330px; border-radius: 20px">
           <a href="Description.php?id=9" id="redirection">
-            <img src="Images/shlitt.png"  class="card-img-top mt-3" id="Image-card">
+          <?php 
+            $sql=$conn->query("SELECT nom_attra,taille_min,capacite,image_attra FROM attraction where id_attra=9");
+            $row=$sql->fetch();
+            ?>
+            <img src="<?= $row['image_attra']?>"  class="card-img-top mt-3" id="Image-card">
             <div class="card-body pl-3">
               <h4 class="card-title text-success">
-              <?php 
-                $sql=$conn->query("SELECT nom_attra,taille_min,capacite FROM attraction where id_attra=9");
-                $row=$sql->fetch();
-                echo $row['nom_attra'];
+              <?= $row['nom_attra'];
                 ?>
               </h4><br>
               <i class="bi bi-person-fill"> <?=$row['taille_min'];?>cm</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -249,13 +259,14 @@
 
         <div class="card shadow-lg m-4 col-md-4" style="width: 300px; height: 330px; border-radius: 20px">
           <a href="Description.php?id=10" id="redirection">
-            <img src="Images/hante.png"  class="card-img-top mt-3" id="Image-card">
+          <?php 
+            $sql=$conn->query("SELECT nom_attra,taille_min,capacite,image_attra FROM attraction where id_attra=10");
+            $row=$sql->fetch();
+            ?>
+            <img src="<?= $row['image_attra']?>"  class="card-img-top mt-3" id="Image-card">
             <div class="card-body pl-3">
               <h4 class="card-title text-success">
-              <?php 
-                $sql=$conn->query("SELECT nom_attra,taille_min,capacite FROM attraction where id_attra=10");
-                $row=$sql->fetch();
-                echo $row['nom_attra'];
+              <?= $row['nom_attra'];
                 ?>
               </h4><br>
               <i class="bi bi-person-fill"> <?=$row['taille_min'];?>cm</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -267,13 +278,14 @@
 
         <div class="card shadow-lg m-4 col-md-4" style="width: 300px; height: 330px; border-radius: 20px">
           <a href="Description.php?id=11" id="redirection">
-            <img src="Images/train.jpg"  class="card-img-top mt-3" id="Image-card">
+          <?php 
+            $sql=$conn->query("SELECT nom_attra,taille_min,capacite,image_attra FROM attraction where id_attra=11");
+            $row=$sql->fetch();
+            ?>
+            <img src="<?= $row['image_attra']?>"  class="card-img-top mt-3" id="Image-card">
             <div class="card-body pl-3">
               <h4 class="card-title text-success">
-              <?php 
-                $sql=$conn->query("SELECT nom_attra,taille_min,capacite FROM attraction where id_attra=11");
-                $row=$sql->fetch();
-                echo $row['nom_attra'];
+              <?= $row['nom_attra'];
                 ?>
               </h4><br>
               <i class="bi bi-person-fill"> <?=$row['taille_min'];?>cm</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -285,13 +297,14 @@
 
         <div class="card shadow-lg m-4 col-md-4" style="width: 300px; height: 330px; border-radius: 20px">
           <a href="Description.php?id=12" id="redirection">
-            <img src="Images/aqua.jpeg"  class="card-img-top mt-3" id="Image-card">
+          <?php 
+            $sql=$conn->query("SELECT nom_attra,taille_min,capacite,image_attra FROM attraction where id_attra=12");
+            $row=$sql->fetch();
+            ?>
+            <img src="<?= $row['image_attra']?>"  class="card-img-top mt-3" id="Image-card">
             <div class="card-body pl-3">
               <h4 class="card-title text-success">
-              <?php 
-                $sql=$conn->query("SELECT nom_attra,taille_min,capacite FROM attraction where id_attra=12");
-                $row=$sql->fetch();
-                echo $row['nom_attra'];
+              <?=$row['nom_attra'];
                 ?>
               </h4><br>
               <i class="bi bi-person-fill"> <?=$row['taille_min'];?>cm</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -311,13 +324,14 @@
 
         <div class="card shadow-lg m-4 col-md-4" style="width: 300px; height: 330px; border-radius: 20px">
           <a href="Description.php?id=13" id="redirection">
-            <img src="Images/petit_serpent.png"  class="card-img-top mt-3" id="Image-card">
+          <?php 
+            $sql=$conn->query("SELECT nom_attra,taille_min,capacite,image_attra FROM attraction where id_attra=13");
+            $row=$sql->fetch();
+            ?>
+            <img src="<?= $row['image_attra']?>"  class="card-img-top mt-3" id="Image-card">
             <div class="card-body pl-3">
               <h4 class="card-title text-success">
-              <?php 
-                $sql=$conn->query("SELECT nom_attra,taille_min,capacite FROM attraction where id_attra=13");
-                $row=$sql->fetch();
-                echo $row['nom_attra'];
+              <?= $row['nom_attra'];
                 ?>
               </h4><br>
               <i class="bi bi-person-fill"> <?=$row['taille_min'];?>cm</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -329,13 +343,14 @@
 
         <div class="card shadow-lg m-4 col-md-4" style="width: 300px; height: 330px; border-radius: 20px">
           <a href="Description.php?id=14" id="redirection">
-            <img src="Images/amusement_park.jpg"  class="card-img-top mt-3" id="Image-card">
+          <?php 
+            $sql=$conn->query("SELECT nom_attra,taille_min,capacite,image_attra FROM attraction where id_attra=14");
+            $row=$sql->fetch();
+            ?>
+            <img src="<?= $row['image_attra']?>"  class="card-img-top mt-3" id="Image-card">
             <div class="card-body pl-3">
               <h4 class="card-title text-success">
-              <?php 
-                $sql=$conn->query("SELECT nom_attra,taille_min,capacite FROM attraction where id_attra=14");
-                $row=$sql->fetch();
-                echo $row['nom_attra'];
+              <?=$row['nom_attra'];
                 ?>
               </h4><br>
               <i class="bi bi-person-fill"> <?=$row['taille_min'];?>cm</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -347,13 +362,14 @@
 
         <div class="card shadow-lg m-4 col-md-4" style="width: 300px; height: 330px; border-radius: 20px">
           <a href="Description.php?id=15" id="redirection">
-            <img src="Images/Caroussel.jpeg"  class="card-img-top mt-3" id="Image-card">
+          <?php 
+            $sql=$conn->query("SELECT nom_attra,taille_min,capacite,image_attra FROM attraction where id_attra=15");
+            $row=$sql->fetch();
+            ?>
+            <img src="<?= $row['image_attra']?>"  class="card-img-top mt-3" id="Image-card">
             <div class="card-body pl-3">
               <h4 class="card-title text-success">
-              <?php 
-                $sql=$conn->query("SELECT nom_attra,taille_min,capacite FROM attraction where id_attra=15");
-                $row=$sql->fetch();
-                echo $row['nom_attra'];
+              <?= $row['nom_attra'];
                 ?>
               </h4><br>
               <i class="bi bi-person-fill"> <?=$row['taille_min'];?>cm</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -368,13 +384,14 @@
 
         <div class="card shadow-lg m-4 col-md-4" style="width: 300px; height: 330px; border-radius: 20px">
           <a href="Description.php?id=16" id="redirection">
-            <img src="Images/presentation_1.jpg"  class="card-img-top mt-3" id="Image-card">
+          <?php 
+            $sql=$conn->query("SELECT nom_attra,taille_min,capacite,image_attra FROM attraction where id_attra=16");
+            $row=$sql->fetch();
+            ?>
+            <img src="<?= $row['image_attra']?>"  class="card-img-top mt-3" id="Image-card">
             <div class="card-body pl-3">
               <h4 class="card-title text-success">
-              <?php 
-                $sql=$conn->query("SELECT nom_attra,taille_min,capacite FROM attraction where id_attra=16");
-                $row=$sql->fetch();
-                echo $row['nom_attra'];
+              <?= $row['nom_attra'];
                 ?>
               </h4><br>
               <i class="bi bi-person-fill"> <?=$row['taille_min'];?>cm</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -386,13 +403,14 @@
 
         <div class="card shadow-lg m-4 col-md-4" style="width: 300px; height: 330px; border-radius: 20px">
           <a href="Description.php?id=17" id="redirection">
-            <img src="Images/tourne.jpg"  class="card-img-top mt-3" id="Image-card">
+          <?php 
+            $sql=$conn->query("SELECT nom_attra,taille_min,capacite,image_attra FROM attraction where id_attra=17");
+            $row=$sql->fetch();
+            ?>
+            <img src="<?= $row['image_attra']?>"  class="card-img-top mt-3" id="Image-card">
             <div class="card-body pl-3">
               <h4 class="card-title text-success">
-              <?php 
-                $sql=$conn->query("SELECT nom_attra,taille_min,capacite FROM attraction where id_attra=17");
-                $row=$sql->fetch();
-                echo $row['nom_attra'];
+              <?= $row['nom_attra'];
                 ?>
               </h4><br>
               <i class="bi bi-person-fill"> <?=$row['taille_min'];?>cm</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -404,13 +422,14 @@
 
         <div class="card shadow-lg m-4 col-md-4" style="width: 300px; height: 330px; border-radius: 20px">
           <a href="Description.php?id=18" id="redirection">
-            <img src="Images/as.jpg"  class="card-img-top mt-3" id="Image-card">
+          <?php 
+            $sql=$conn->query("SELECT nom_attra,taille_min,capacite,image_attra FROM attraction where id_attra=18");
+            $row=$sql->fetch();
+            ?>
+            <img src="<?= $row['image_attra']?>"  class="card-img-top mt-3" id="Image-card">
             <div class="card-body pl-3">
               <h4 class="card-title text-success">
-              <?php 
-                $sql=$conn->query("SELECT nom_attra,taille_min,capacite FROM attraction where id_attra=18");
-                $row=$sql->fetch();
-                echo $row['nom_attra'];
+              <?=$row['nom_attra'];
                 ?>
               </h4><br>
               <i class="bi bi-person-fill"> <?=$row['taille_min'];?>cm</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
