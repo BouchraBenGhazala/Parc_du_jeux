@@ -1,3 +1,64 @@
+<?php
+session_start();
+        require_once('fpdf185/fpdf.php');
+        require_once('MonPdf.php');
+        
+       
+        if (isset($_POST['generate_pdf'])) {
+            $date_visite = $_POST['date_visite'];
+            $quantite_adulte = $_POST['ajout_adulte'];
+            $quantite_enfant = $_POST['ajout_enfant'];
+            $prenom = $_SESSION['username'];
+        
+            // Connexion à la base de données
+            $host = 'localhost';
+            $dbname = 'parc2';
+            $username = 'root';
+            $password = '';
+        
+            try {
+                $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
+                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        
+                // Requête pour récupérer les informations du visiteur
+                $stmt1 = $conn->prepare('SELECT * FROM visiteur WHERE prenom_visit = :prenom');
+                $stmt1->bindParam(':prenom', $prenom);
+                $stmt1->execute();
+
+                $type='Billet premium';
+        
+                // Requête pour récupérer les tarifs
+                $stmt2 = $conn->prepare('SELECT * FROM tarif2 WHERE descr = :descr');
+                $stmt2->bindParam(':descr', $type);
+                $stmt2->execute();
+        
+                if ($stmt1->rowCount() > 0 && $stmt2->rowCount() > 0) {
+                    $row1 = $stmt1->fetch(PDO::FETCH_ASSOC);
+                    $nom = $row1['nom_visit'];
+                    $email = $row1['email_visit'];
+                    $adr = $row1['adresse_visit'];
+                    $tel = $row1['tel_visit'];
+                    $date_n = $row1['datenais_visit'];
+        
+                    $row2 = $stmt2->fetch(PDO::FETCH_ASSOC);
+                    $prix_ad = $row2['adulte'];
+                    $prix_en = $row2['enfant'];
+                    $tot = $prix_ad * $quantite_adulte + $prix_en * $quantite_enfant;
+        
+                    // Création de l'objet PDF avec les données récupérées
+                    $pdf = new MonPDF($nom, $prenom, $adr, $tel, $date_n, $email, 'premium', $date_visite, $tot, $quantite_adulte, $quantite_enfant);
+                    $pdf->AddPage();
+                    $pdf->SetAutoPageBreak(false);
+                    $pdf->Content();
+                    $pdf->Output('reservation.pdf', 'D');
+                } else {
+                    echo 'Aucun visiteur trouvé.';
+                }
+            } catch (PDOException $e) {
+                echo 'Erreur de connexion à la base de données : ' . $e->getMessage();
+            }
+        }
+        ?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -10,7 +71,7 @@
 
     $host='localhost';
     // $dbname='test0';
-    $dbname='parc_du_jeux';
+    $dbname='parc2';
     $username='root';
     $password='';
     
@@ -63,7 +124,7 @@
         </div>
         <br>
         <?php
-            $sql1 = "SELECT * FROM tarif";
+            $sql1 = "SELECT * FROM tarif2";
             $result = $conn->query($sql1);
 
             if ($result->num_rows > 0){
@@ -80,7 +141,7 @@
             }
 
                         ?>
-        <form method="POST">
+        <form method="POST" >
         <div class="row flex-column flex-sm-row">
             <div class="col-sm-6">
                 <div class="container" id="container">
@@ -122,7 +183,7 @@
         </div>
         <br>
         <div class="row d-flex justify-content-center align-items-center">
-            <button class="btn btn-primary">Confirmer</button>
+        <button class="btn btn-primary" name="generate_pdf">Confirmer</button>
         </div>
         <br>
         </form>
@@ -144,7 +205,7 @@
                 
             }
 
-            $sql3="SELECT id_tarif FROM tarif WHERE descr='Billet premium'";
+            $sql3="SELECT id_tarif FROM tarif2 WHERE descr='Billet premium'";
             $result2=$conn->query($sql3);
             if ($result2 && $result2->num_rows > 0) {
                 $row2 = $result2->fetch_assoc();
@@ -163,8 +224,7 @@
             // echo "<br>".$id_tarif;
            
             $db2=$conn->prepare("INSERT INTO billet(date_visite,quantité_adulte,quantité_enfant,id_tarif_fk,id_reserv_fk) VALUES (?,?,?,?,?)");
-            $db2->execute([$date_visite,$quantite_adulte,$quantite_enfant,$id_tarif,$id_reserv]);
-        }
+            $db2->execute([$date_visite,$quantite_adulte,$quantite_enfant,$id_tarif,$id_reserv]);}
         ?>
         </div>
 

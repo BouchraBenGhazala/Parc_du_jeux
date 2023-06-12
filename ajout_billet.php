@@ -20,7 +20,7 @@
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "parc_du_jeux";
+    $dbname = "parc2";
     $conn = new mysqli($servername, $username, $password, $dbname);
     if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
@@ -31,20 +31,20 @@
     $enfant = $_POST['enfant'];
     
     if(isset($_POST['modifier'])) {
-        $modif = $conn->prepare('UPDATE billets SET adulte = ?, enfant = ? WHERE descr = ?');
+        $modif = $conn->prepare('UPDATE billet SET adulte = ?, enfant = ? WHERE descr = ?');
         $modif->bind_param("iis", $adulte, $enfant, $tarif);
         $modif->execute();
     } elseif(isset($_POST['ajouter'])) {
-        $sql2 = $conn->prepare("INSERT INTO billets (descr, adulte, enfant) VALUES (?, ?, ?)");
+        $sql2 = $conn->prepare("INSERT INTO billet (descr, adulte, enfant) VALUES (?, ?, ?)");
         $sql2->bind_param("sii", $tarif, $adulte, $enfant);
         $sql2->execute();
     } elseif(isset($_POST['supprimer'])) {
-        $supp = $conn->prepare('DELETE FROM billets WHERE descr = ?');
+        $supp = $conn->prepare('DELETE FROM billet WHERE descr = ?');
         $supp->bind_param("s", $tarif);
         $supp->execute();
     }
     
-    $sql = "SELECT * FROM billets";
+    $sql = "SELECT * FROM billet";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         echo "<table><tr><th>Tarif</th><th>Adulte</th><th>Enfant</th></tr>";
