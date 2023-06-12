@@ -319,10 +319,10 @@
     <!-- ****************************************************** -->
     <div class="container justify-content-center">
       <h1 id="Petit">Pour les petits</h1>
-      <div class="row" style="margin-left: 5%">
+      <div class="row" style="margin-left:5%;">
 
 
-        <div class="card shadow-lg m-4 col-md-4" style="width: 300px; height: 330px; border-radius: 20px">
+        <div class="card shadow-lg m-4 col-md-4 col-lg-4 col-xxl-4" style="width: 300px; height: 330px; border-radius: 20px">
           <a href="Description.php?id=13" id="redirection">
           <?php 
             $sql=$conn->query("SELECT nom_attra,taille_min,capacite,image_attra FROM attraction where id_attra=13");
@@ -360,7 +360,7 @@
         </div>
 
 
-        <div class="card shadow-lg m-4 col-md-4" style="width: 300px; height: 330px; border-radius: 20px">
+        <div class="card shadow-lg m-4 col-md-4 " style="width: 300px; height: 330px; border-radius: 20px">
           <a href="Description.php?id=15" id="redirection">
           <?php 
             $sql=$conn->query("SELECT nom_attra,taille_min,capacite,image_attra FROM attraction where id_attra=15");
@@ -422,7 +422,7 @@
 
         <div class="card shadow-lg m-4 col-md-4" style="width: 300px; height: 330px; border-radius: 20px">
           <a href="Description.php?id=18" id="redirection">
-          <?php 
+            <?php 
             $sql=$conn->query("SELECT nom_attra,taille_min,capacite,image_attra FROM attraction where id_attra=18");
             $row=$sql->fetch();
             ?>

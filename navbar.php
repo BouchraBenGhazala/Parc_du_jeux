@@ -58,7 +58,6 @@
 						<ul  class="dropdown-menu dropdown-menu-white sub-menu" aria-labelledby="navbarDarkDropdownMenuLink">
 							<li><a class=" surbrillance dropdown-item" href="Attraction.php">Attraction</a></li>
 							<li><a class="surbrillance dropdown-item" href="resto.php">Restaurant</a></li>
-							<li><a class="surbrillance dropdown-item" href="#">Boutique</a></li>
               <li><a class="surbrillance dropdown-item" href="billets.php">Billeterie</a></li>
 						</ul>
 
@@ -71,7 +70,6 @@
 								</a>
 								<ul  class="dropdown-menu dropdown-menu-white sub-menu" aria-labelledby="navbarDarkDropdownMenuLink">
 									<li><a class=" surbrillance dropdown-item" href="horaire.php">Horaires</a></li>
-<<<<<<< HEAD
 									<li><a class="surbrillance dropdown-item" href="contact.php">Contact</a></li>
 									<li><a class="surbrillance dropdown-item" href="tarif.php">Tarifs</a></li>
 								</ul>
@@ -81,11 +79,6 @@
               
           </ul>
 					</div>
-						<li id="qa" class="nav-item  ">
-						<a class="nav-link active surbrillance">
-						 Q&A
-						</a>
-					</li>
 				</ul>
 			</div>
        <!--Right side-->
@@ -133,5 +126,5 @@
       }
     </style>
 
-  </body>
+  </body>
 </html>

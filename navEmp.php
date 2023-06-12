@@ -28,13 +28,13 @@
               <ul class="navbar-nav ">
 
                   <li class="nav-item">
-                      <a class="nav-link " href="#"><span >Attraction</span></a>
+                      <a class="nav-link " href="Attraction-modif.php"><span >Attraction</span></a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" href="#">Tarifs</a>
+                      <a class="nav-link" href="ajout_tarif.php">Tarifs</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" href="#">Horaire</a>
+                      <a class="nav-link" href="ajout_horaire.php">Horaire</a>
                   </li>
 
                 
