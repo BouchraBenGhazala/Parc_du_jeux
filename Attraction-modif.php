@@ -43,70 +43,104 @@
             border-color: purple;
         }
     </style>
-    <?php include 'navbar.php';?>
+    <?php include 'navEmp.php';?>
 </head>
 <body>
     <div class="container">
-        <h1>Ajouter un tarif :</h1>
-        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
+        <h1>Modifier Attraction :</h1>
+        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post" enctype="multipart/form-data">
             <div class="form-group">
-                <label for="tarif">Tarif :</label>
-                <input type="text" class="form-control" id="tarif" name="tarif">
+                <label for="tarif">Ancien nom :</label>
+                <input type="text" class="form-control" id="tarif" name="nom_avant" required>
             </div>
             <div class="form-group">
-                <label for="adulte">Adulte :</label>
-                <input type="number" class="form-control" id="adulte" name="adulte">
+                <label for="adulte">Nouveu Nom :</label>
+                <input type="text" class="form-control" id="adulte" name="nom_apres">
             </div>
             <div class="form-group">
-                <label for="enfant">Enfant :</label>
-                <input type="number" class="form-control" id="enfant" name="enfant">
-            </div><br><br>
-            <button type="submit" class="btn btn-primary" name="ajouter">Ajouter</button>
+                <label for="enfant">Description :</label><br>
+                <input type="text" name="desc" id="enfant" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="adulte">Capacité :</label>
+                <input type="number" class="form-control" id="adulte" name="Capacite">
+            </div>
+            <div class="form-group">
+                <label for="adulte">Durée :</label>
+                <input type="text" class="form-control" id="adulte" name="duration" placeholder="...min ...s" >
+            </div>
+            <div class="form-group">
+                <label for="adulte">Taille minimale :</label>
+                <input type="number" class="form-control" id="adulte" name="taille_min">
+            </div>
+            <div class="form-group">
+                <label for="adulte">Nouvelle image :</label>
+                <input type="file" class="form-control" id="adulte" name="nv_image">
+            </div>
             <button type="submit" class="btn btn-primary" name="modifier">Modifier</button>
-            <button type="submit" class="btn btn-primary" name="supprimer">Supprimer</button><br><br>
+           <br><br>
         </form>
-
+        
+        
         <?php 
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "parc2";
-        $conn = new mysqli($servername, $username, $password, $dbname);
-        if ($conn->connect_error) {
-          die("Connection failed: " . $conn->connect_error);
+        try {
+            $conn = new PDO('mysql:hostname=localhost;dbname=parc2','root','');
+        } catch (PDOException $e) {
+            die("Erruer de connexion" . $e->getmessage());
         }
         
-        $tarif = isset($_POST['tarif']) ? $_POST['tarif'] : '';
-        $adulte = isset($_POST['adulte']) ? $_POST['adulte'] : '';
-        $enfant = isset($_POST['enfant']) ? $_POST['enfant'] : '';
+        $ancien_nom = strtolower($_POST['nom_avant']) ;
+        $nv_nom = $_POST['nom_apres'];
+        $nv_desc = $_POST['desc'];
+        $nv_capac = $_POST['Capacite'];
+        $nv_duree = $_POST['duration'];
+        $nv_taille = $_POST['taille_min'];
         
-        if(isset($_POST['modifier'])) {
-            $modif = $conn->prepare('UPDATE tarif2 SET adulte = ?, enfant = ? WHERE descr = ?');
-            $modif->bind_param("iss", $adulte, $enfant, $tarif);
-            $modif->execute();
-        } elseif(isset($_POST['ajouter'])) {
-            $sql2 = $conn->prepare("INSERT INTO tarif2 (descr, adulte, enfant) VALUES (?, ?, ?)");
-            $sql2->bind_param("sii", $tarif, $adulte, $enfant);
-            $sql2->execute();
-        } elseif(isset($_POST['supprimer'])) {
-            $supp = $conn->prepare('DELETE FROM tarif2 WHERE descr = ?');
-            $supp->bind_param("s", $tarif);
-            $supp->execute();
-        }
+                
         
-        $sql = "SELECT * FROM tarif2";
-        $result = $conn->query($sql);
-        if ($result->num_rows > 0) {
-            echo "<table><tr><th>Tarif</th><th>Adulte</th><th>Enfant</th></tr>";
-            // output data of each row
-            while($row = $result->fetch_assoc()) {
-              echo "<tr><td>".$row["descr"]."</td><td>".$row["adulte"]."</td><td>".$row["enfant"]."</td></tr>";
+        if(isset($_POST['modifier']) and $_SERVER['REQUEST_METHOD']=='POST') {
+            if(!empty($_POST['nom_apres'])){
+                echo $_POST['nom_apres'];
+                $sql = $conn->prepare("UPDATE attraction SET nom_attra=?  WHERE LOWER(nom_attra)=?; ");
+                $sql->execute(array($nv_nom,$ancien_nom));
             }
-            echo "</table>";
-        } else {
-            echo "0 results";
-        }
-        $conn->close();
+            if(!empty($_POST['desc'])){
+                
+                $sql1 = $conn->prepare("UPDATE attraction SET descr=? WHERE LOWER(nom_attra)=?;");
+                echo "wlya"; 
+                $sql1->execute(array($nv_desc,$ancien_nom));
+               
+            }
+            if(!empty($_POST['Capacite'])){
+                echo $_POST['Capacite'];
+                $sql = $conn->prepare("UPDATE attraction SET capacite=? WHERE LOWER(nom_attra)=?;");
+                $sql->execute(array($nv_capac,$ancien_nom));
+            }
+            if(!empty($_POST['duration'])){
+                echo $_POST['duration'];
+                $sql = $conn->prepare("UPDATE attraction SET duree=? WHERE LOWER(nom_attra)=? ;");
+                $sql->execute(array($nv_duree,$ancien_nom));
+
+            }
+            if(!empty($_POST['taille_min'])){
+                echo $_POST['taille_min'];
+                $sql = $conn->prepare("UPDATE attraction SET taille_min=? WHERE LOWER(nom_attra)=? ;");
+                $sql->execute(array($nv_taille,$ancien_nom));
+            }
+            if(isset($_FILES['nv_image']) && !empty($_FILES['nv_image'])){
+                $name = $_FILES['nv_image']['name'];
+                $tmp = $_FILES['nv_image']['tmp_name'];
+                if(move_uploaded_file($tmp , 'Images/'.$name)){
+                    echo "File uploaded successfuly";
+                    $sql = $conn->prepare("UPDATE attraction SET image_attra=? WHERE LOWER(nom_attra)=? ;");
+                    $sql->execute(array('Images'.$name,$ancien_nom));
+
+                }
+            }
+
+
+
+        } 
         ?>
     </div>
 

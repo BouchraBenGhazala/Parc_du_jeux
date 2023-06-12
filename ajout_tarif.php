@@ -43,7 +43,7 @@
             border-color: purple;
         }
     </style>
-    <?php include 'navbar.php';?>
+    <?php include 'navEmp.php';?>
 </head>
 <body>
     <div class="container">
