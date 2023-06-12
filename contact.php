@@ -18,7 +18,7 @@ $nom = $_POST['nom'] ?? "";
 $sujet = $_POST['sujet'] ?? "";
 $msg = $_POST['message'] ?? "";
 
-$sql = $conn->prepare("INSERT INTO contact2 (nom_contact, email_contact, sujet, msg) VALUES (?, ?, ?, ?)");
+$sql = $conn->prepare("INSERT INTO contact (nom_contact, email_contact, sujet, msg) VALUES (?, ?, ?, ?)");
 $sql->bind_param("ssss", $nom, $email, $sujet, $msg);
 
 if ($sql->execute()) {
