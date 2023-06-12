@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Création de compte</title>
     <link rel="stylesheet" href="Bootstrap files/css/bootstrap.min.css">
-
+    <?php include 'navbar.php';?>
 </head>
 <body>
 <?php
@@ -167,5 +167,6 @@ if (mail($to, $subject, $message, $headers)) {
             text-decoration: underline;
         }
     </style>
+    <?php include "footer.php";?>
 </body>
 </html>

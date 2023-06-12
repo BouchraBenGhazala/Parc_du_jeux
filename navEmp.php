@@ -23,7 +23,7 @@
     <nav class="navbar navbar-expand-lg">
 
               <a class="navbar-brand" href="#">
-                <img src="Images/logo.jpg" width="100" height="100" alt="logo du parc">
+                <img src="Images/p3.jpeg" width="100" height="100" alt="logo du parc">
               </a>
               <ul class="navbar-nav ">
 

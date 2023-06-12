@@ -45,9 +45,10 @@
     <div class="clickable-div" onclick="window.location.href='voir_contact.php'">
       <h3>Contact</h3>
     </div>
-    <div class="clickable-div" onclick="window.location.href='attrac.php'">
+    <div class="clickable-div" onclick="window.location.href='Attraction.php'">
       <h3>Attraction</h3>
     </div>
   </div>
+  <?php include "footer.php";?>
 </body>
 </html>

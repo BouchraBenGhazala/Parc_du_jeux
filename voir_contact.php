@@ -69,7 +69,7 @@
           }
 
           // Récupération des tarifs depuis la base de données
-          $sql = "SELECT * FROM contact2";
+          $sql = "SELECT * FROM contact";
           $result = $conn->query($sql);
 
           // Affichage des tarifs
@@ -93,5 +93,6 @@
       </table>
     </div>
   </div>
+  <?php include "footer.php";?>
 </body>
 </html>

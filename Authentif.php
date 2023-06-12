@@ -28,6 +28,7 @@
         }
     
     ?>
+    <?php include 'navbar.php';?>
 </head>
 <body>
 
@@ -116,7 +117,7 @@
                             header('Location: billets.php');
                             exit;
 
-                        }/*
+                        }
                             // Vérifier dans la table "employe"
                             $employeQuery = $pdo->prepare("SELECT * FROM employe WHERE email_emp = ? AND mdp_emp = ?");
                             $employeQuery->execute([$email, $mdp]);
@@ -141,7 +142,7 @@
                                 exit;
                             }
                                 // Les informations de connexion sont incorrectes
-                                echo 'Identifiants invalides';*/
+                                echo 'Identifiants invalides';
                             }
                 ?>
                 </div> 
@@ -193,5 +194,6 @@
             border-radius: 10px;
         }
     </style>
+    <?php include "footer.php";?>
 </body>
 </html>
