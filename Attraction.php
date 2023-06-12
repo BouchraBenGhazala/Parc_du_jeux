@@ -18,7 +18,7 @@
     <!-- Connexion a la database -->
     <?php
     try {
-      $conn = new PDO('mysql:host=localhost;dbname=projet_php','root','');
+      $conn = new PDO('mysql:host=localhost;dbname=parc2','root','');
     } catch (PDOException $e) {
       die('Erreur de connexion: ' . $e->getmessage());
     }

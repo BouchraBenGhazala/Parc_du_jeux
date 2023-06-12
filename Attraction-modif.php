@@ -4,9 +4,7 @@ try {
 } catch (PDOException $e) {
     die("Erreur de connexion : " . $e->getmessage());
 }
-$sql = $conn->query("SELECT * FROM attraction;");
-$row2 = $sql->fetchall();
-$i = 0;
+
     
 ?>
 <!DOCTYPE html>
@@ -43,11 +41,7 @@ $i = 0;
             </form>
         </div>
         <?php
-        
-
-            if(isset($_GET['nv-nom'])){
-                
-            }
+            $sql = $conn->prepare("UPDATE attraction set nom_attra=? , ")
             if(isset($_GET['nv-desc'])){
 
             }
