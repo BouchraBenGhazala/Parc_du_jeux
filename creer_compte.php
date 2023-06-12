@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Création de compte</title>
     <link rel="stylesheet" href="Bootstrap files/css/bootstrap.min.css">
-
+    <?php include 'navbar.php';?>
 </head>
 <body>
 <?php
@@ -107,7 +107,7 @@
 
 // Envoyer l'e-mail
 if (mail($to, $subject, $message, $headers)) {
-    echo "E-mail envoyé avec succès.";
+    echo "Soyez la bienvenue";
 } else {
     echo "Erreur lors de l'envoi de l'e-mail.";
 }
@@ -165,5 +165,6 @@ if (mail($to, $subject, $message, $headers)) {
             text-decoration: underline;
         }
     </style>
+    <?php include "footer.php";?>
 </body>
 </html>

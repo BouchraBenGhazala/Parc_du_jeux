@@ -177,23 +177,7 @@
   </div>
 </div>
 </div>
-
-<!--
-  dans php:
-  $jour_char = $_POST['jour_char'];
-$jour_int = $_POST['jour_int'];
-$mois = $_POST['mois'];
-$annee = $_POST['annee'];
-
-// Utilisez les variables comme vous le souhaitez dans votre code PHP
-
-// Exemple : Affichage des valeurs
-echo "Jour (abrégé) : " . $jour_char . "<br>";
-echo "Jour (numérique) : " . $jour_int . "<br>";
-echo "Mois : " . $mois . "<br>";
-echo "Année : " . $annee . "<br>";
-   
--->
+<?php include "footer.php";?>
 
 </body>
 </html>

@@ -156,7 +156,7 @@
     <div class="clickable-div" onclick="window.location.href='Attraction.php'">
       <h3>Attraction</h3>
     </div>
-    <div class="clickable-div" onclick="window.location.href='restaurant.php'">
+    <div class="clickable-div" onclick="window.location.href='resto.php'">
       <h3>Restaurant</h3>
     </div>
     <div class="clickable-div" onclick="window.location.href='contact.php'">
@@ -169,6 +169,8 @@
 
     
     </div>
-  </div>
+  </div><br><br>
+  
 </body>
+<?php include "footer.php";?>
 </html>
