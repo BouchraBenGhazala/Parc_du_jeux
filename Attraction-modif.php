@@ -1,106 +1,117 @@
-<?php 
-try {
-    $conn = new PDO('mysql:hostname=localhost;dbname=projet_php','root','');
-} catch (PDOException $e) {
-    die("Erreur de connexion : " . $e->getmessage());
-}
-
-    
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Attraction-modif</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Modifier Tarif</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.4/css/bootstrap3/bootstrap-switch.min.css">
 
+    <style>
+        body {
+            background-color: white;
+            color: purple;
+        }
+        .container {
+            margin-top: 50px;
+            text-align: center;
+            color: purple;
+        }
+        table {
+            width: 100%;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            border-collapse: collapse;
+        }
+        table th, table td {
+            padding: 8px;
+            border: 1px solid white;
+            margin:auto;
+        }
+        table td {
+            color: black;
+        }
+        form {
+            margin-top: 20px;
+        }
+        .form-group {
+            width: 50%;
+            margin: 0 auto;
+        }
+        .btn-primary {
+            background-color: purple;
+            border-color: purple;
+        }
+    </style>
+    <?php include 'navbar.php';?>
 </head>
 <body>
-    <?php include 'navEmp.php' ?>
-    <div class="container modif "><br><br>
-        <center class="h3 text-light">Entrer le nom de l'attraction que vous voulez modifiez :</center>
-        <div class=" d-flex justify-content-center">
-            <form  method="get">
-                <input type="text" name="nom" maxlength=30 style="width: 370px;"> <br><br>
-                <input type="submit" name='submit' class="btn btn-outline-primary" value="Confirm" id='confirm_button'>
-            </form> 
-        </div> 
-         
+    <div class="container">
+        <h1>Ajouter un tarif :</h1>
+        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
+            <div class="form-group">
+                <label for="tarif">Tarif :</label>
+                <input type="text" class="form-control" id="tarif" name="tarif">
+            </div>
+            <div class="form-group">
+                <label for="adulte">Adulte :</label>
+                <input type="number" class="form-control" id="adulte" name="adulte">
+            </div>
+            <div class="form-group">
+                <label for="enfant">Enfant :</label>
+                <input type="number" class="form-control" id="enfant" name="enfant">
+            </div><br><br>
+            <button type="submit" class="btn btn-primary" name="ajouter">Ajouter</button>
+            <button type="submit" class="btn btn-primary" name="modifier">Modifier</button>
+            <button type="submit" class="btn btn-primary" name="supprimer">Supprimer</button><br><br>
+        </form>
+
+        <?php 
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "parc2";
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        if ($conn->connect_error) {
+          die("Connection failed: " . $conn->connect_error);
+        }
         
-        <h1 class="text text-center text-primary text-decoration-underline"  id="modif-form">Formulaire de modification</h1>
-        <div class="container  d-flex justify-content-center">
-            <form method="get" enctype="multipart/form">
-                <center class="h3 text-light">Nouveau nom :</center> <input type="text" name="nv-nom" class="input-modif" maxlength=30><br><br>
-                <center class="h3 text-light">Nouveau Description :</center><textarea name="nv-desc" id="" cols="60" rows="5" ></textarea><br><br>
-                <center class="h3 text-light">Capacité :</center><input type="number" name="nv-nbr" class="input-modif" ><br><br>
-                <center class="h3 text-light">Durée :</center> <input type="time" name="nv-time" class="input-modif"><br><br>
-                <center class="h3 text-light">Taille minimale :</center><input type="number" name="nv-taille" class="input-modif" max=200><br><br>
-                <center class="h3 text-light">Telecharger une nouvelle image :</center><input type="file" name="nv-image" class="input-modif">(.jpg/.png) <br><br>
-                <input type="submit" value="Apply" class="btn btn-outline-primary btn-block" name='apply'>
-            </form>
-        </div>
-        <?php
-            $sql = $conn->prepare("UPDATE attraction set nom_attra=? , ")
-            if(isset($_GET['nv-desc'])){
-
-            }
-            if(isset($_GET['nv-nbr'])){
-
-            }
-            if(isset($_GET['nv-time'])){
-               $str1 = substr($_GET['nv-time'],0,2);
-               $str2 = substr($_GET['nv-time'],3);
-               echo $str1 . 'min ' . $str2 . 's';
-            }
-            if(isset($_GET['nv-taille'])){
-
-            }
-            if(isset($_FILES['nv-image'])){
-               $name_file = $_FILES['nv-image']['name'];
-               $tmp = $_FILES['nv-nom']['tmp_name'];
-               if(move_uploaded_file($tmp,'Images/'.$name_file)){
-                  echo "Image teléchargée avec succés";
-               }
-            }
+        $tarif = isset($_POST['tarif']) ? $_POST['tarif'] : '';
+        $adulte = isset($_POST['adulte']) ? $_POST['adulte'] : '';
+        $enfant = isset($_POST['enfant']) ? $_POST['enfant'] : '';
         
-            ?>
-                
+        if(isset($_POST['modifier'])) {
+            $modif = $conn->prepare('UPDATE tarif2 SET adulte = ?, enfant = ? WHERE descr = ?');
+            $modif->bind_param("iss", $adulte, $enfant, $tarif);
+            $modif->execute();
+        } elseif(isset($_POST['ajouter'])) {
+            $sql2 = $conn->prepare("INSERT INTO tarif2 (descr, adulte, enfant) VALUES (?, ?, ?)");
+            $sql2->bind_param("sii", $tarif, $adulte, $enfant);
+            $sql2->execute();
+        } elseif(isset($_POST['supprimer'])) {
+            $supp = $conn->prepare('DELETE FROM tarif2 WHERE descr = ?');
+            $supp->bind_param("s", $tarif);
+            $supp->execute();
+        }
+        
+        $sql = "SELECT * FROM tarif2";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            echo "<table><tr><th>Tarif</th><th>Adulte</th><th>Enfant</th></tr>";
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+              echo "<tr><td>".$row["descr"]."</td><td>".$row["adulte"]."</td><td>".$row["enfant"]."</td></tr>";
+            }
+            echo "</table>";
+        } else {
+            echo "0 results";
+        }
+        $conn->close();
+        ?>
     </div>
-    <style>
-        .input-modif{
-        width : 100%;
-        height:4.5%;
-    }
-      #Image-card{
-        border-radius: 20px;
-        height: 270.010px;
-        width: 334.656px;
-      }
-     input[type=submit]{
-      float: right;
-     }
-     .modif{
-      border: 10px solid purple;
-      border-radius: 100px;
-      margin-top: 5%;
-      background-color: purple;
-      height: 1000px;
-      justify-content: center;
-     }
-     #card{
-        display: none;
-     }
-    </style>
-    <script>
-        var carte = document.getElementById('card');
-       var submit = document.getElementById('confirm_button');
-       submit.addEventListener('click',function(event){
-        event.preventDefault();
-        carte.style.visibility = 'visible';
-       });
-      
 
-    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
