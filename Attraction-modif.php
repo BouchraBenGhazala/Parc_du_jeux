@@ -1,6 +1,6 @@
 <?php 
 try {
-    $conn = new PDO('mysql:hostname=localhost;dbname=projet_php','root','');
+    $conn = new PDO('mysql:hostname=localhost;dbname=parc2','root','');
 } catch (PDOException $e) {
     die("Erreur de connexion : " . $e->getmessage());
 }
@@ -40,31 +40,7 @@ try {
                 <input type="submit" value="Apply" class="btn btn-outline-primary btn-block" name='apply'>
             </form>
         </div>
-        <?php
-            $sql = $conn->prepare("UPDATE attraction set nom_attra=? , ")
-            if(isset($_GET['nv-desc'])){
-
-            }
-            if(isset($_GET['nv-nbr'])){
-
-            }
-            if(isset($_GET['nv-time'])){
-               $str1 = substr($_GET['nv-time'],0,2);
-               $str2 = substr($_GET['nv-time'],3);
-               echo $str1 . 'min ' . $str2 . 's';
-            }
-            if(isset($_GET['nv-taille'])){
-
-            }
-            if(isset($_FILES['nv-image'])){
-               $name_file = $_FILES['nv-image']['name'];
-               $tmp = $_FILES['nv-nom']['tmp_name'];
-               if(move_uploaded_file($tmp,'Images/'.$name_file)){
-                  echo "Image teléchargée avec succés";
-               }
-            }
         
-            ?>
                 
     </div>
     <style>
