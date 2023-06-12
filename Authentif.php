@@ -29,7 +29,6 @@
         }
     
     ?>
-    <?php include 'navbar.php';?>
 </head>
 <body>
 
@@ -195,6 +194,5 @@
             border-radius: 10px;
         }
     </style>
-    <?php include "footer.php";?>
 </body>
 </html>
