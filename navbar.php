@@ -71,7 +71,7 @@
 								</a>
 								<ul  class="dropdown-menu dropdown-menu-white sub-menu" aria-labelledby="navbarDarkDropdownMenuLink">
 									<li><a class=" surbrillance dropdown-item" href="horaire.php">Horaires</a></li>
-
+<<<<<<< HEAD
 									<li><a class="surbrillance dropdown-item" href="contact.php">Contact</a></li>
 									<li><a class="surbrillance dropdown-item" href="tarif.php">Tarifs</a></li>
 								</ul>
