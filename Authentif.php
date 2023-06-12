@@ -16,7 +16,7 @@
     <?php
         session_start();
         $host='localhost';
-        $dbname='parc_du_jeux';
+        $dbname='projet_php';
         $username='root';
         $password='';
     
