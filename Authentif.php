@@ -16,6 +16,7 @@
     <?php
         session_start();
         $host='localhost';
+        $dbname='projet_php';
         $dbname='parc2';
         $username='root';
         $password='';
