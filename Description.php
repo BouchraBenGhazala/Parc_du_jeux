@@ -1,7 +1,7 @@
 <?php 
     if(isset($_GET['id'])){
         try {
-            $conn=new PDO('mysql:host=localhost;dbname=projet_php','root','');
+            $conn=new PDO('mysql:host=localhost;dbname=parc2','root','');
         } catch (PDOException $e) {
             die('Ereur de connexion: ' . $e->getmessage());
         }
@@ -22,14 +22,14 @@
    
     
     <div class="container">
-        <div class="row text-center bg-danger" style="border-radius:20px;">
+        <div class="row text-center" style="border-radius:20px; background-color:purple;">
             <h1 class="text-uppercase">
                 <?=$row['nom_attra']; ?>
 
             </h1>
         </div>
         <div class="row mt-5">
-            <div class="col-md-5 bg-warning" id="text">
+            <div class="col-md-5" id="text">
                 <?=$row['descr']; ?>
             </div>
             
@@ -64,7 +64,7 @@
     </div>
     <style>
         #image{
-            border: 3px solid black; 
+            border: 5px solid purple; 
             height: 480px; 
             width: 700px; 
             border-radius: 20px;
@@ -80,6 +80,7 @@
             border-radius: 20px;
         }
         #text{
+            background-color: purple;
             font-size: 17px;
             font-family: 'Alfa Slab One', cursive;
             font-family: 'Lobster', cursive;
